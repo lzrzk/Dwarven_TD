@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs6gh1agbqjon"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/mainmenu.gd" id="1_lvauq"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_lvauq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1255.0
+offset_bottom = 773.0
+color = Color(0.26, 0.244833, 0.234, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 227.0
+offset_top = 73.0
+offset_right = 931.0
+offset_bottom = 238.0
+theme_override_font_sizes/font_size = 120
+text = "Dwraven TD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = -1.0
+offset_top = 354.0
+offset_right = 1252.0
+offset_bottom = 657.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
