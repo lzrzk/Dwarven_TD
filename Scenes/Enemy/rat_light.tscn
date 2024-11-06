@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbmg08ia0eby"]
+
+[ext_resource type="Script" path="res://Scenes/Enemy/rat_light.gd" id="1_8epnd"]
+[ext_resource type="Texture2D" uid="uid://6la76cffjtg" path="res://Assets/Крыса_Легкая броня.png" id="1_xphgu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i77ol"]
+radius = 11.0
+height = 22.0
+
+[node name="RatLight" type="Area2D"]
+script = ExtResource("1_8epnd")
+hp = 30
+speed = 25
+shieldsPhysical = 1
+shieldsMagical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_xphgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_i77ol")

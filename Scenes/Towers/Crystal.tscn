@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0fxr8a1jedy7"]
+
+[ext_resource type="Texture2D" uid="uid://d3ybbwgtys832" path="res://Assets/Кристал_база.png" id="1_cms10"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cms10")

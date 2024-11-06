@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6gvef7h3roa2"]
+
+[ext_resource type="Script" path="res://Scenes/Enemy/rat_king.gd" id="1_cmpbw"]
+[ext_resource type="Texture2D" uid="uid://c7ax0qmdc22qq" path="res://Assets/Крыса_король.png" id="1_itdof"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i77ol"]
+radius = 11.0
+height = 22.0
+
+[node name="RatKing" type="Area2D"]
+script = ExtResource("1_cmpbw")
+hp = 40
+speed = 15
+shieldsPhysical = 2
+shieldsMagical = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_itdof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_i77ol")
