@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://1q71mi3al1as"]
+
+[ext_resource type="Texture2D" uid="uid://c3hw1siey4guf" path="res://Assets/Дорога_кривая.png" id="1_bjlcn"]
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_kx2oa"]
+[ext_resource type="Texture2D" uid="uid://e8lfhy08s7l6" path="res://Assets/Дорога_прямая.png" id="2_btc0m"]
+[ext_resource type="Texture2D" uid="uid://dguab8tgnll16" path="res://Assets/Ворота.png" id="3_hs2ip"]
+[ext_resource type="PackedScene" uid="uid://b3mffrofe6alu" path="res://Scenes/Enemy/Rat.tscn" id="4_1kjlq"]
+[ext_resource type="Texture2D" uid="uid://cyc7lktwdjeg7" path="res://Assets/Пустое_место_иконка.png" id="5_g5q2p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyw3"]
+texture = ExtResource("1_bjlcn")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6rcq"]
+texture = ExtResource("2_btc0m")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2j0f"]
+texture = ExtResource("3_hs2ip")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xutvk"]
+texture = ExtResource("5_g5q2p")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jlgoc"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_6nyw3")
+sources/1 = SubResource("TileSetAtlasSource_m6rcq")
+sources/2 = SubResource("TileSetAtlasSource_u2j0f")
+sources/3 = SubResource("TileSetAtlasSource_xutvk")
+
+[sub_resource type="Curve2D" id="Curve2D_gnm0b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -32, 480, 0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 1056, 416, 0, 0, 0, 0, 1120, 416, 0, 0, 0, 0, 1120, 224, 0, 0, 0, 0, 32, 224, 0, 0, 0, 0, 32, 96, 0, 0, 0, 0, 992, 96, 0, 0, 0, 0, 992, 32)
+}
+point_count = 9
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_kx2oa")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 2644.0
+offset_bottom = 1316.0
+color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_jlgoc")
+format = 2
+layer_0/tile_data = PackedInt32Array(15, 2, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 196622, 1, 805306368, 196621, 1, 805306368, 196620, 1, 805306368, 196619, 1, 805306368, 196618, 1, 805306368, 196617, 1, 805306368, 196616, 1, 805306368, 196615, 1, 805306368, 196614, 1, 805306368, 196613, 1, 805306368, 196612, 1, 805306368, 196611, 1, 805306368, 196610, 1, 805306368, 196609, 1, 805306368, 196623, 1, 805306368, 196624, 1, 805306368, 196625, 0, 1610612736, 196608, 0, 1342177280, 65536, 0, 805306368, 65551, 0, 0, 131072, 1, 1610612736, 393233, 0, 0, 327697, 1, 1610612736, 262161, 1, 1610612736, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 0, 0, 393232, 0, 805306368, 131073, 3, 0, 131085, 3, 0, 458769, 3, 0, 327696, 3, 0, 393218, 3, 0)
+
+[node name="EnemyPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_gnm0b")
+
+[node name="enemies" type="Node" parent="."]
+
+[node name="Rat" parent="enemies" instance=ExtResource("4_1kjlq")]

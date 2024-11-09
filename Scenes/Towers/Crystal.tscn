@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0fxr8a1jedy7"]
+[gd_scene load_steps=4 format=3 uid="uid://b0fxr8a1jedy7"]
 
 [ext_resource type="Texture2D" uid="uid://d3ybbwgtys832" path="res://Assets/Кристал_база.png" id="1_cms10"]
+[ext_resource type="Script" path="res://Scenes/Towers/crystal.gd" id="1_jw1fj"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8njoh"]
+radius = 250.0
+
+[node name="Crystal" type="Node2D"]
+script = ExtResource("1_jw1fj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cms10")
+
+[node name="Attack_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_range"]
+shape = SubResource("CircleShape2D_8njoh")
+debug_color = Color(0.92549, 0, 0.00784314, 0.14902)
+
+[connection signal="area_entered" from="Attack_range" to="." method="_on_attack_range_area_entered"]
+[connection signal="area_exited" from="Attack_range" to="." method="_on_attack_range_area_exited"]
