@@ -3,7 +3,7 @@ extends Area2D
 class_name enemy
 
 @export var hp:int
-
+@export var maxHp:int
 @onready var type = "enemy"
 
 @export var speed:int
@@ -18,23 +18,21 @@ class_name enemy
 
 @export var pathFollow:PathFollow2D
 
-"""
-func _init(hp, spd, shPh, shMg, dmg):
-	self.hp = hp
-	self.speed = spd
-	self.shields_magical = shMg
-	self.shields_physical = shPh
-	self.damage = dmg
-"""
+
 
 func _process(delta: float) -> void:
 	self.pathFollow.progress += self.speed * delta
 	self.position = self.pathFollow.position
 	self.rotation = self.pathFollow.rotation
 	$Sprite2D.flip_v = self.rotation > 0
+	$hp.value = float(hp)/float(maxHp) *100
 
 
-func hit(dmg):
-	hp -= dmg
+func hit(magical_dmg, physical_dmg, true_dmg) -> void:
+	
+	var magDmgTrue = magical_dmg * shieldsMagical
+	var physDmgTrue = physical_dmg * shieldsPhysical
+	var incomingDmg = physDmgTrue + magDmgTrue + true_dmg
+	self.hp -= incomingDmg
 	if hp <= 0:
 		self.queue_free()

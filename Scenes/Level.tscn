@@ -1,15 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://1q71mi3al1as"]
+[gd_scene load_steps=17 format=3 uid="uid://1q71mi3al1as"]
 
 [ext_resource type="Texture2D" uid="uid://c3hw1siey4guf" path="res://Assets/Дорога_кривая.png" id="1_bjlcn"]
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_kx2oa"]
 [ext_resource type="Texture2D" uid="uid://e8lfhy08s7l6" path="res://Assets/Дорога_прямая.png" id="2_btc0m"]
 [ext_resource type="Texture2D" uid="uid://dguab8tgnll16" path="res://Assets/Ворота.png" id="3_hs2ip"]
-[ext_resource type="Texture2D" uid="uid://cyc7lktwdjeg7" path="res://Assets/Пустое_место_иконка.png" id="5_g5q2p"]
-[ext_resource type="Texture2D" uid="uid://d3ybbwgtys832" path="res://Assets/Кристал_база.png" id="6_vdy7h"]
 [ext_resource type="Texture2D" uid="uid://d12jvha8vegp8" path="res://Assets/мусор_3.png" id="7_f20fi"]
-[ext_resource type="PackedScene" uid="uid://b0fxr8a1jedy7" path="res://Scenes/Towers/Crystal.tscn" id="7_tmi3j"]
 [ext_resource type="Texture2D" uid="uid://b7snwvpjli5tn" path="res://Assets/мусор_2.png" id="8_u7jev"]
 [ext_resource type="Texture2D" uid="uid://lglyb0hmuimv" path="res://Assets/Мусор_1.png" id="9_a8j82"]
+[ext_resource type="PackedScene" uid="uid://cwcfvm81lh4hr" path="res://Scenes/Towers/towerPicker.tscn" id="10_vp1cy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyw3"]
 texture = ExtResource("1_bjlcn")
@@ -41,16 +39,6 @@ texture = ExtResource("3_hs2ip")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xutvk"]
-texture = ExtResource("5_g5q2p")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88alq"]
-texture = ExtResource("6_vdy7h")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fgqw"]
 texture = ExtResource("7_f20fi")
 texture_region_size = Vector2i(64, 64)
@@ -71,8 +59,6 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_6nyw3")
 sources/1 = SubResource("TileSetAtlasSource_m6rcq")
 sources/2 = SubResource("TileSetAtlasSource_u2j0f")
-sources/3 = SubResource("TileSetAtlasSource_xutvk")
-sources/4 = SubResource("TileSetAtlasSource_88alq")
 sources/5 = SubResource("TileSetAtlasSource_3fgqw")
 sources/6 = SubResource("TileSetAtlasSource_obhvx")
 sources/7 = SubResource("TileSetAtlasSource_85aik")
@@ -96,7 +82,7 @@ color = Color(0.188235, 0.188235, 0.188235, 1)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jlgoc")
 format = 2
-layer_0/tile_data = PackedInt32Array(15, 2, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 196622, 1, 805306368, 196621, 1, 805306368, 196620, 1, 805306368, 196619, 1, 805306368, 196618, 1, 805306368, 196617, 1, 805306368, 196616, 1, 805306368, 196615, 1, 805306368, 196614, 1, 805306368, 196613, 1, 805306368, 196612, 1, 805306368, 196611, 1, 805306368, 196610, 1, 805306368, 196609, 1, 805306368, 196623, 1, 805306368, 196624, 1, 805306368, 196625, 0, 1610612736, 196608, 0, 1342177280, 65536, 0, 805306368, 65551, 0, 0, 131072, 1, 1610612736, 393233, 0, 0, 327697, 1, 1610612736, 262161, 1, 1610612736, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 0, 0, 393232, 0, 805306368, 131085, 3, 0, 458769, 3, 0, 458752, 1, 0)
+layer_0/tile_data = PackedInt32Array(15, 2, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 196622, 1, 805306368, 196621, 1, 805306368, 196620, 1, 805306368, 196619, 1, 805306368, 196618, 1, 805306368, 196617, 1, 805306368, 196616, 1, 805306368, 196615, 1, 805306368, 196614, 1, 805306368, 196613, 1, 805306368, 196612, 1, 805306368, 196611, 1, 805306368, 196610, 1, 805306368, 196609, 1, 805306368, 196623, 1, 805306368, 196624, 1, 805306368, 196625, 0, 1610612736, 196608, 0, 1342177280, 65536, 0, 805306368, 65551, 0, 0, 131072, 1, 1610612736, 393233, 0, 0, 327697, 1, 1610612736, 262161, 1, 1610612736, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 0, 0, 393232, 0, 805306368, 458752, 1, 0)
 layer_1/name = "Layer1"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(458754, 6, 0, 458757, 6, 0, 458759, 6, 0, 196618, 6, 0, 65545, 6, 1879048192, 65551, 6, 1879048192, 393233, 6, 536870912, 196614, 6, 0, 65539, 6, 0, 65547, 6, 805306368, 196608, 6, 805306368, 458760, 5, 1342177280, 196616, 5, 1610612736, 65546, 5, 1073741824, 65542, 5, 1342177280, 458758, 7, 0, 458761, 7, 0, 458765, 7, 0, 458767, 7, 0, 393232, 7, 1610612736, 65544, 7, 0, 65540, 7, 0, 65537, 7, 0, 131072, 7, 1610612736, 196611, 7, 805306368, 196619, 7, 805306368, 196624, 7, 805306368, 262161, 7, 1610612736, 196622, 6, 0, 196620, 6, 1342177280)
@@ -106,5 +92,14 @@ curve = SubResource("Curve2D_gnm0b")
 
 [node name="enemies" type="Node" parent="."]
 
-[node name="Crystal" parent="." instance=ExtResource("7_tmi3j")]
+[node name="towers" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="TowerPicker" parent="towers" instance=ExtResource("10_vp1cy")]
 position = Vector2(992, 416)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 96.0
+offset_bottom = 32.0
+text = "Ore:"
+clip_text = true

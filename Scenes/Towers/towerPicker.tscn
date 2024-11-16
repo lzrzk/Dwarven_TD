@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwcfvm81lh4hr"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/tower_picker.gd" id="1_3g165"]
+[ext_resource type="Texture2D" uid="uid://cyc7lktwdjeg7" path="res://Assets/Пустое_место_иконка.png" id="2_3542m"]
+
+[node name="TowerPicker" type="Node2D"]
+script = ExtResource("1_3g165")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3542m")
+
+[node name="ActivedButton" type="Button" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="CrystalButton" type="Button" parent="."]
+visible = false
+offset_left = -32.0
+offset_bottom = 32.0
+text = "C"
+
+[node name="BallistaButton" type="Button" parent="."]
+visible = false
+offset_top = -32.0
+offset_right = 32.0
+text = "B"
+
+[node name="StatueButton" type="Button" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -32.0
+text = "S"
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+offset_right = 32.0
+offset_bottom = 32.0
+text = "Ba"
+
+[connection signal="pressed" from="ActivedButton" to="." method="_on_actived_button_pressed"]
+[connection signal="pressed" from="CrystalButton" to="." method="_on_crystal_button_pressed"]
+[connection signal="pressed" from="BallistaButton" to="." method="_on_ballista_button_pressed"]
+[connection signal="pressed" from="StatueButton" to="." method="_on_statue_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
