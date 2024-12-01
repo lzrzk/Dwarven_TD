@@ -1,19 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbmg08ia0eby"]
+[gd_scene load_steps=3 format=3 uid="uid://cbmg08ia0eby"]
 
-[ext_resource type="Script" path="res://Scenes/Enemy/rat_light.gd" id="1_8epnd"]
-[ext_resource type="Texture2D" uid="uid://6la76cffjtg" path="res://Assets/Крыса_Легкая броня.png" id="1_xphgu"]
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_o85si"]
+[ext_resource type="Texture2D" uid="uid://6la76cffjtg" path="res://Assets/Assets_Enemies/Крыса_Легкая броня.png" id="2_y1blm"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i77ol"]
-radius = 11.0
-height = 22.0
+[node name="Rat_light" instance=ExtResource("1_o85si")]
+hp = 40
+maxHp = 40
+speed = 250
+shieldsPhysical = 0.9
+shieldsMagical = 0.5
+damage = 1
 
-[node name="RatLight" type="Area2D"]
-script = ExtResource("1_8epnd")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
-texture = ExtResource("1_xphgu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_i77ol")
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_y1blm")

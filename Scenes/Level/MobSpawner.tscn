@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dks8w6lf84vv0"]
+
+[ext_resource type="Script" path="res://Scenes/Level/mob_spawner.gd" id="1_0hr5s"]
+
+[node name="MobSpawner" type="Node"]
+script = ExtResource("1_0hr5s")
+
+[node name="EnemyTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="WaveTimer" type="Timer" parent="."]

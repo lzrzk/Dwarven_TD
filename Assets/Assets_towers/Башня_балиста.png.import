@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6la76cffjtg"
-path="res://.godot/imported/Крыса_Легкая броня.png-5911ad60c589292444353fc4e374eeed.ctex"
+uid="uid://byn48i5nvaybf"
+path="res://.godot/imported/Башня_балиста.png-143cb0465fd9814f2b3c1346e9bf061a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Крыса_Легкая броня.png"
-dest_files=["res://.godot/imported/Крыса_Легкая броня.png-5911ad60c589292444353fc4e374eeed.ctex"]
+source_file="res://Assets/Assets_towers/Башня_балиста.png"
+dest_files=["res://.godot/imported/Башня_балиста.png-143cb0465fd9814f2b3c1346e9bf061a.ctex"]
 
 [params]
 

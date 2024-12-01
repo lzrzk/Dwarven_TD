@@ -8,9 +8,9 @@ class_name enemy
 
 @export var speed:int
 
-@export var shieldsPhysical:int
+@export var shieldsPhysical:float
 
-@export var shieldsMagical:int
+@export var shieldsMagical:float
 
 @export var damage:int
 
@@ -18,6 +18,9 @@ class_name enemy
 
 @export var pathFollow:PathFollow2D
 
+func _ready() -> void:
+	self.pathFollow=PathFollow2D.new()
+	Variables.enemyPath.add_child(self.pathFollow)
 
 
 func _process(delta: float) -> void:

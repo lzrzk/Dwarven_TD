@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tck84kfy2svv"
-path="res://.godot/imported/Взрыв_кристал.png-e33d0edef031c564d6a21a37ed889c31.ctex"
+uid="uid://e8lfhy08s7l6"
+path="res://.godot/imported/Дорога_прямая.png-61c8a77f95b210f8eff26059798d35f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Взрыв_кристал.png"
-dest_files=["res://.godot/imported/Взрыв_кристал.png-e33d0edef031c564d6a21a37ed889c31.ctex"]
+source_file="res://Assets/Assets_road/Дорога_прямая.png"
+dest_files=["res://.godot/imported/Дорога_прямая.png-61c8a77f95b210f8eff26059798d35f9.ctex"]
 
 [params]
 

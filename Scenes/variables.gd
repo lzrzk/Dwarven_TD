@@ -1,4 +1,5 @@
 extends Node
 
 var enemyPath: Path2D
-var ore
+var ore: int = 0
+var enemies:Node

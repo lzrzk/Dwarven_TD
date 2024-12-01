@@ -1,33 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3mffrofe6alu"]
+[gd_scene load_steps=3 format=3 uid="uid://b3mffrofe6alu"]
 
-[ext_resource type="Script" path="res://Scenes/Enemy/rat.gd" id="1_1lape"]
-[ext_resource type="Texture2D" uid="uid://c1he6q7mfky47" path="res://Assets/Крыса.png" id="1_duwso"]
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_pailb"]
+[ext_resource type="Texture2D" uid="uid://c1he6q7mfky47" path="res://Assets/Assets_Enemies/Крыса.png" id="2_xou4m"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vea74"]
-radius = 11.0
-height = 22.0
+[node name="Rat" instance=ExtResource("1_pailb")]
+hp = 20
+maxHp = 20
+speed = 200
+damage = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6boy"]
-bg_color = Color(0.263729, 0.023624, 2.40654e-08, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oljv7"]
-bg_color = Color(0, 0.726047, 0.178912, 1)
-
-[node name="Rat" type="Area2D"]
-script = ExtResource("1_1lape")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_duwso")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_vea74")
-
-[node name="hp" type="ProgressBar" parent="."]
-offset_left = -9.0
-offset_top = 8.0
-offset_right = 9.0
-offset_bottom = 12.0
-theme_override_styles/background = SubResource("StyleBoxFlat_g6boy")
-theme_override_styles/fill = SubResource("StyleBoxFlat_oljv7")
-show_percentage = false
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_xou4m")

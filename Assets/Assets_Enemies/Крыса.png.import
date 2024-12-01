@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3hw1siey4guf"
-path="res://.godot/imported/Дорога_кривая.png-95cc21cec5fd258e5b519c19efcf6555.ctex"
+uid="uid://c1he6q7mfky47"
+path="res://.godot/imported/Крыса.png-eed77ab28d54c513e94ba75649f24e20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Дорога_кривая.png"
-dest_files=["res://.godot/imported/Дорога_кривая.png-95cc21cec5fd258e5b519c19efcf6555.ctex"]
+source_file="res://Assets/Assets_Enemies/Крыса.png"
+dest_files=["res://.godot/imported/Крыса.png-eed77ab28d54c513e94ba75649f24e20.ctex"]
 
 [params]
 

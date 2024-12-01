@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d12jvha8vegp8"
-path="res://.godot/imported/мусор_3.png-ff00728461a1a527514f70c74e794397.ctex"
+uid="uid://c15vd0twxkvdm"
+path="res://.godot/imported/балиста_база.png-9156cdb3d444e578b082f1701ed9e80e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/мусор_3.png"
-dest_files=["res://.godot/imported/мусор_3.png-ff00728461a1a527514f70c74e794397.ctex"]
+source_file="res://Assets/Assets_towers/балиста_база.png"
+dest_files=["res://.godot/imported/балиста_база.png-9156cdb3d444e578b082f1701ed9e80e.ctex"]
 
 [params]
 

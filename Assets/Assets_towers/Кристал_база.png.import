@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dguab8tgnll16"
-path="res://.godot/imported/Ворота.png-40760109e02f2ebd124b1d0f2e32912a.ctex"
+uid="uid://d3ybbwgtys832"
+path="res://.godot/imported/Кристал_база.png-eb76ca6726c5d7b4e8b42034a60a8327.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ворота.png"
-dest_files=["res://.godot/imported/Ворота.png-40760109e02f2ebd124b1d0f2e32912a.ctex"]
+source_file="res://Assets/Assets_towers/Кристал_база.png"
+dest_files=["res://.godot/imported/Кристал_база.png-eb76ca6726c5d7b4e8b42034a60a8327.ctex"]
 
 [params]
 

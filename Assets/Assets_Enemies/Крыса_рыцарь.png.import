@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyc7lktwdjeg7"
-path="res://.godot/imported/Пустое_место_иконка.png-a3d58ac3189fc42d05042d0f2d1ff7d0.ctex"
+uid="uid://c7ax0qmdc22qq"
+path="res://.godot/imported/Крыса_рыцарь.png-b58032ef6313c6d21e5aa2cbc206425f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Пустое_место_иконка.png"
-dest_files=["res://.godot/imported/Пустое_место_иконка.png-a3d58ac3189fc42d05042d0f2d1ff7d0.ctex"]
+source_file="res://Assets/Assets_Enemies/Крыса_рыцарь.png"
+dest_files=["res://.godot/imported/Крыса_рыцарь.png-b58032ef6313c6d21e5aa2cbc206425f.ctex"]
 
 [params]
 

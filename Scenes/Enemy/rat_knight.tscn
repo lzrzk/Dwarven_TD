@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6gvef7h3roa2"]
+
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_8avq4"]
+[ext_resource type="Texture2D" uid="uid://c7ax0qmdc22qq" path="res://Assets/Assets_Enemies/Крыса_рыцарь.png" id="2_irx4q"]
+
+[node name="Rat_knight" instance=ExtResource("1_8avq4")]
+hp = 20
+maxHp = 20
+speed = 150
+shieldsPhysical = 0.5
+shieldsMagical = 0.8
+damage = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_irx4q")

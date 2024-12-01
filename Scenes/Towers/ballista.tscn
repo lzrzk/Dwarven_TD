@@ -1,26 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctsdd6stiim2s"]
 
-[ext_resource type="Script" path="res://ballista.gd" id="1_aa2wa"]
-[ext_resource type="Texture2D" uid="uid://c15vd0twxkvdm" path="res://Assets/балиста_база.png" id="1_h0k8p"]
+[ext_resource type="Script" path="res://Scenes/Towers/ballista.gd" id="1_aa2wa"]
+[ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_gq0ga"]
+[ext_resource type="Texture2D" uid="uid://c15vd0twxkvdm" path="res://Assets/Assets_towers/балиста_база.png" id="3_gw7jh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8njoh"]
-radius = 250.0
-
-[node name="Ballista" type="Node2D"]
+[node name="Ballista" instance=ExtResource("1_gq0ga")]
 script = ExtResource("1_aa2wa")
 
-[node name="attackTimer" type="Timer" parent="."]
-one_shot = true
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_gw7jh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_h0k8p")
-
-[node name="Attack_range" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_range"]
-shape = SubResource("CircleShape2D_8njoh")
-debug_color = Color(0.92549, 0, 0.00784314, 0.14902)
-
-[connection signal="timeout" from="attackTimer" to="." method="shoot"]
-[connection signal="area_entered" from="Attack_range" to="." method="_on_attack_range_area_entered"]
-[connection signal="area_exited" from="Attack_range" to="." method="_on_attack_range_area_exited"]
+[node name="BackButton" parent="." index="4"]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 96.0
+text = "Back"

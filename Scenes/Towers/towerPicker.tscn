@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwcfvm81lh4hr"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/tower_picker.gd" id="1_3g165"]
-[ext_resource type="Texture2D" uid="uid://cyc7lktwdjeg7" path="res://Assets/Пустое_место_иконка.png" id="2_3542m"]
+[ext_resource type="Texture2D" uid="uid://cyc7lktwdjeg7" path="res://Assets/Assets_towers/Пустое_место_иконка.png" id="2_3542m"]
 
 [node name="TowerPicker" type="Node2D"]
 script = ExtResource("1_3g165")

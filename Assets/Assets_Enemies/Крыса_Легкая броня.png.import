@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1he6q7mfky47"
-path="res://.godot/imported/Крыса.png-c18b05936e54f9558d389406db9390c6.ctex"
+uid="uid://6la76cffjtg"
+path="res://.godot/imported/Крыса_Легкая броня.png-9bdbbdd9e52afd458dc82cc658ffe214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Крыса.png"
-dest_files=["res://.godot/imported/Крыса.png-c18b05936e54f9558d389406db9390c6.ctex"]
+source_file="res://Assets/Assets_Enemies/Крыса_Легкая броня.png"
+dest_files=["res://.godot/imported/Крыса_Легкая броня.png-9bdbbdd9e52afd458dc82cc658ffe214.ctex"]
 
 [params]
 

@@ -1,56 +1,42 @@
-[gd_scene load_steps=17 format=3 uid="uid://1q71mi3al1as"]
+[gd_scene load_steps=18 format=3 uid="uid://1q71mi3al1as"]
 
-[ext_resource type="Texture2D" uid="uid://c3hw1siey4guf" path="res://Assets/Дорога_кривая.png" id="1_bjlcn"]
-[ext_resource type="Script" path="res://Scenes/level.gd" id="1_kx2oa"]
-[ext_resource type="Texture2D" uid="uid://e8lfhy08s7l6" path="res://Assets/Дорога_прямая.png" id="2_btc0m"]
-[ext_resource type="Texture2D" uid="uid://dguab8tgnll16" path="res://Assets/Ворота.png" id="3_hs2ip"]
-[ext_resource type="Texture2D" uid="uid://d12jvha8vegp8" path="res://Assets/мусор_3.png" id="7_f20fi"]
-[ext_resource type="Texture2D" uid="uid://b7snwvpjli5tn" path="res://Assets/мусор_2.png" id="8_u7jev"]
-[ext_resource type="Texture2D" uid="uid://lglyb0hmuimv" path="res://Assets/Мусор_1.png" id="9_a8j82"]
-[ext_resource type="PackedScene" uid="uid://cwcfvm81lh4hr" path="res://Scenes/Towers/towerPicker.tscn" id="10_vp1cy"]
+[ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_yfd3r"]
+[ext_resource type="PackedScene" uid="uid://dks8w6lf84vv0" path="res://Scenes/Level/MobSpawner.tscn" id="2_tr7wq"]
+[ext_resource type="Texture2D" uid="uid://c3hw1siey4guf" path="res://Assets/Assets_road/Дорога_кривая.png" id="3_nbrci"]
+[ext_resource type="Texture2D" uid="uid://e8lfhy08s7l6" path="res://Assets/Assets_road/Дорога_прямая.png" id="4_vx0tg"]
+[ext_resource type="Texture2D" uid="uid://dguab8tgnll16" path="res://Assets/Assets_road/Ворота.png" id="5_mch6w"]
+[ext_resource type="Texture2D" uid="uid://d12jvha8vegp8" path="res://Assets/Assets_road/мусор_3.png" id="6_02jt2"]
+[ext_resource type="Texture2D" uid="uid://b7snwvpjli5tn" path="res://Assets/Assets_road/мусор_2.png" id="7_sklc6"]
+[ext_resource type="PackedScene" uid="uid://cwcfvm81lh4hr" path="res://Scenes/Towers/towerPicker.tscn" id="8_7mxip"]
+[ext_resource type="Texture2D" uid="uid://lglyb0hmuimv" path="res://Assets/Assets_road/Мусор_1.png" id="8_yx4ul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyw3"]
-texture = ExtResource("1_bjlcn")
+texture = ExtResource("3_nbrci")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6rcq"]
-texture = ExtResource("2_btc0m")
+texture = ExtResource("4_vx0tg")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2j0f"]
-texture = ExtResource("3_hs2ip")
+texture = ExtResource("5_mch6w")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fgqw"]
-texture = ExtResource("7_f20fi")
+texture = ExtResource("6_02jt2")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obhvx"]
-texture = ExtResource("8_u7jev")
+texture = ExtResource("7_sklc6")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85aik"]
-texture = ExtResource("9_a8j82")
+texture = ExtResource("8_yx4ul")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
@@ -70,7 +56,9 @@ _data = {
 point_count = 9
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_kx2oa")
+script = ExtResource("1_yfd3r")
+
+[node name="MobSpawner" parent="." instance=ExtResource("2_tr7wq")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -32.0
@@ -95,10 +83,31 @@ curve = SubResource("Curve2D_gnm0b")
 [node name="towers" type="Node" parent="."]
 unique_name_in_owner = true
 
-[node name="TowerPicker" parent="towers" instance=ExtResource("10_vp1cy")]
+[node name="TowerPicker3" parent="towers" instance=ExtResource("8_7mxip")]
+position = Vector2(1120, 480)
+
+[node name="TowerPicker" parent="towers" instance=ExtResource("8_7mxip")]
+position = Vector2(544, 160)
+
+[node name="TowerPicker2" parent="towers" instance=ExtResource("8_7mxip")]
+position = Vector2(1056, 288)
+
+[node name="TowerPicker4" parent="towers" instance=ExtResource("8_7mxip")]
+position = Vector2(96, 160)
+
+[node name="TowerPicker5" parent="towers" instance=ExtResource("8_7mxip")]
 position = Vector2(992, 416)
 
-[node name="Label" type="Label" parent="."]
+[node name="TowerPicker6" parent="towers" instance=ExtResource("8_7mxip")]
+position = Vector2(160, 544)
+
+[node name="TowerPicker7" parent="towers" instance=ExtResource("8_7mxip")]
+position = Vector2(1056, 96)
+
+[node name="TowerPicker8" parent="towers" instance=ExtResource("8_7mxip")]
+position = Vector2(352, 416)
+
+[node name="OreLabel" type="Label" parent="."]
 offset_right = 96.0
 offset_bottom = 32.0
 text = "Ore:"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lglyb0hmuimv"
-path="res://.godot/imported/Мусор_1.png-0918df68628508a2b32dee5010c714f5.ctex"
+uid="uid://d12jvha8vegp8"
+path="res://.godot/imported/мусор_3.png-17c8cc1215bd6a59c271a78832f00f48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Мусор_1.png"
-dest_files=["res://.godot/imported/Мусор_1.png-0918df68628508a2b32dee5010c714f5.ctex"]
+source_file="res://Assets/Assets_road/мусор_3.png"
+dest_files=["res://.godot/imported/мусор_3.png-17c8cc1215bd6a59c271a78832f00f48.ctex"]
 
 [params]
 

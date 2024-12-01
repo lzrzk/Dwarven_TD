@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ybbwgtys832"
-path="res://.godot/imported/Кристал_база.png-9e5ced1c6465cda4bb73fe5e54256383.ctex"
+uid="uid://c3hw1siey4guf"
+path="res://.godot/imported/Дорога_кривая.png-cb0db2edea7306cea4b4a46dd42d3965.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Кристал_база.png"
-dest_files=["res://.godot/imported/Кристал_база.png-9e5ced1c6465cda4bb73fe5e54256383.ctex"]
+source_file="res://Assets/Assets_road/Дорога_кривая.png"
+dest_files=["res://.godot/imported/Дорога_кривая.png-cb0db2edea7306cea4b4a46dd42d3965.ctex"]
 
 [params]
 

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg8pjsf8mmsl3"]
+
+[ext_resource type="Texture2D" path="res://Assets/Крыса.png" id="1_mbt5l"]
+[ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_nggcq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_foxfb"]
+radius = 11.0
+height = 22.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00ed5"]
+bg_color = Color(0.263729, 0.023624, 2.40654e-08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_majs0"]
+bg_color = Color(0, 0.726047, 0.178912, 1)
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_nggcq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mbt5l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_foxfb")
+
+[node name="hp" type="ProgressBar" parent="."]
+offset_left = -9.0
+offset_top = 8.0
+offset_right = 9.0
+offset_bottom = 12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_00ed5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_majs0")
+show_percentage = false

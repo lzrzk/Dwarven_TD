@@ -1,19 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6gvef7h3roa2"]
+[gd_scene load_steps=3 format=3 uid="uid://b05ps3cg8wr7p"]
 
-[ext_resource type="Script" path="res://Scenes/Enemy/rat_king.gd" id="1_cmpbw"]
-[ext_resource type="Texture2D" uid="uid://c7ax0qmdc22qq" path="res://Assets/Крыса_король.png" id="1_itdof"]
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_66y7l"]
+[ext_resource type="Texture2D" uid="uid://c11enygbw5qd0" path="res://Assets/Assets_Enemies/Крыса_король.png" id="2_466px"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i77ol"]
-radius = 11.0
-height = 22.0
+[node name="Rat_King" instance=ExtResource("1_66y7l")]
+hp = 1000
+maxHp = 1000
+speed = 100
+shieldsPhysical = 0.9
+shieldsMagical = 0.8
+damage = 5
 
-[node name="RatKing" type="Area2D"]
-script = ExtResource("1_cmpbw")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
-texture = ExtResource("1_itdof")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_i77ol")
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_466px")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byn48i5nvaybf"
-path="res://.godot/imported/Башня_балиста.png-8580a533d8775e85faafee8cdb33fa15.ctex"
+uid="uid://cyc7lktwdjeg7"
+path="res://.godot/imported/Пустое_место_иконка.png-10d89b3a2398da0150b92e42b6e0cc35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Башня_балиста.png"
-dest_files=["res://.godot/imported/Башня_балиста.png-8580a533d8775e85faafee8cdb33fa15.ctex"]
+source_file="res://Assets/Assets_towers/Пустое_место_иконка.png"
+dest_files=["res://.godot/imported/Пустое_место_иконка.png-10d89b3a2398da0150b92e42b6e0cc35.ctex"]
 
 [params]
 

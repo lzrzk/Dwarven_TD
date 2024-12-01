@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c15vd0twxkvdm"
-path="res://.godot/imported/балиста_база.png-a449b989279ee03a53220193acfe0010.ctex"
+uid="uid://bbkkqgojfijy1"
+path="res://.godot/imported/Кристал_база_2.png-26210d95803b00140766a85f6872e7b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/балиста_база.png"
-dest_files=["res://.godot/imported/балиста_база.png-a449b989279ee03a53220193acfe0010.ctex"]
+source_file="res://Assets/Assets_towers/Кристал_база_2.png"
+dest_files=["res://.godot/imported/Кристал_база_2.png-26210d95803b00140766a85f6872e7b4.ctex"]
 
 [params]
 
