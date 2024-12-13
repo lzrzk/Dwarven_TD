@@ -1,6 +1,6 @@
 extends Node2D
-var crystal_scene = preload("res://Scenes/Towers/Crystal_1.tscn")
-var ballista_scene = preload("res://Scenes/Towers/ballista.tscn")
+var crystal_scene = preload("res://Scenes/Towers/crystal_1.tscn")
+var ballista_scene = preload("res://Scenes/Towers/ballista_1.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,7 +32,7 @@ func _on_ballista_button_pressed() -> void:
 	ballista.position = self.position
 	if Variables.ore >= 100:
 		%towers.add_child(ballista)
-		Variables.ore-=100
+		Variables.ore-= 100
 		queue_free()
 
 

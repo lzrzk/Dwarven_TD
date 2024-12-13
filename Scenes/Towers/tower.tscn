@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://j148fhwv2l80"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/tower.gd" id="1_0s22x"]
-[ext_resource type="Texture2D" path="res://Assets/балиста_база.png" id="1_1irex"]
+[ext_resource type="Texture2D" uid="uid://dag05kn6reqb4" path="res://Assets/Assets_towers/Кристал_база_1.png" id="2_xxfbv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_863ce"]
 radius = 226.274
@@ -13,7 +13,7 @@ script = ExtResource("1_0s22x")
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1irex")
+texture = ExtResource("2_xxfbv")
 
 [node name="Attack_range" type="Area2D" parent="."]
 
@@ -32,7 +32,17 @@ visible = false
 offset_right = 8.0
 offset_bottom = 8.0
 
-[connection signal="area_shape_entered" from="Attack_range" to="." method="_on_attack_range_area_entered"]
-[connection signal="area_shape_exited" from="Attack_range" to="." method="_on_attack_range_area_exited"]
+[node name="UpgradeButton" type="Button" parent="."]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Up"
+
+[connection signal="timeout" from="attackTimer" to="." method="shoot"]
+[connection signal="area_entered" from="Attack_range" to="." method="_on_attack_range_area_entered"]
+[connection signal="area_exited" from="Attack_range" to="." method="_on_attack_range_area_exited"]
+[connection signal="body_entered" from="Attack_range" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="Attack_range" to="." method="_on_attack_range_body_exited"]
 [connection signal="pressed" from="ActivateButton" to="." method="_on_activate_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

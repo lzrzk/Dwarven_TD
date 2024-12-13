@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://qph4hggfa467"]
+
+[ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_546ws"]
+[ext_resource type="Script" path="res://ballista_1.gd" id="2_wdpgs"]
+
+[node name="ballista_1" instance=ExtResource("1_546ws")]
+script = ExtResource("2_wdpgs")

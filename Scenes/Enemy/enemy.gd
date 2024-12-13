@@ -1,9 +1,9 @@
-extends Area2D
+extends CharacterBody2D
 
 class_name enemy
 
-@export var hp:int
-@export var maxHp:int
+@export var hp:float
+@export var maxHp:float
 @onready var type = "enemy"
 
 @export var speed:int

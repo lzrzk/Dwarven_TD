@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgh6qk8f64viq"]
+
+[ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_gh0x7"]
+[ext_resource type="Script" path="res://Scenes/Towers/crystal_2.gd" id="2_7mj2k"]
+
+[node name="Crystal_2" instance=ExtResource("1_gh0x7")]
+script = ExtResource("2_7mj2k")
+price = 120
+magical_dmg = 2.0
+attack_speeds = 0.4

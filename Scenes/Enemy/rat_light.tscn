@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://6la76cffjtg" path="res://Assets/Assets_Enemies/Крыса_Легкая броня.png" id="2_y1blm"]
 
 [node name="Rat_light" instance=ExtResource("1_o85si")]
-hp = 40
-maxHp = 40
+hp = 30.0
+maxHp = 30.0
 speed = 250
 shieldsPhysical = 0.9
 shieldsMagical = 0.5

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c7ax0qmdc22qq" path="res://Assets/Assets_Enemies/Крыса_рыцарь.png" id="2_irx4q"]
 
 [node name="Rat_knight" instance=ExtResource("1_8avq4")]
-hp = 20
-maxHp = 20
+hp = 50.0
+maxHp = 50.0
 speed = 150
 shieldsPhysical = 0.5
 shieldsMagical = 0.8

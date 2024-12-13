@@ -1,13 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3mffrofe6alu"]
+[gd_scene load_steps=2 format=3 uid="uid://b3mffrofe6alu"]
 
 [ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_pailb"]
-[ext_resource type="Texture2D" uid="uid://c1he6q7mfky47" path="res://Assets/Assets_Enemies/Крыса.png" id="2_xou4m"]
 
 [node name="Rat" instance=ExtResource("1_pailb")]
-hp = 20
-maxHp = 20
+hp = 20.0
+maxHp = 20.0
 speed = 200
+shieldsPhysical = 1.0
+shieldsMagical = 1.0
 damage = 1
-
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_xou4m")

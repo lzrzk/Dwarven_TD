@@ -13,18 +13,6 @@ func _process(delta: float) -> void:
 		$attackTimer.start()
 
 
-
-func _on_attack_range_area_entered(area: Area2D) -> void:
-	print("ON GUARD")
-	if area.type == "enemy":
-		self.enemiesInRange.append(area)
-		print(self.enemiesInRange)
-
-func _on_attack_range_area_exited(area: Area2D) -> void:
-	print("OFF GUARD")
-	if area.type == "enemy":
-		self.enemiesInRange.erase(area)
-
 func shoot():
 	if self.target == "first" and len(self.enemiesInRange) > 0:
 		self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,0)
@@ -33,10 +21,29 @@ func shoot():
 
 
 func _on_activate_button_pressed() -> void:
-	$ActivateButtonpass.visible = false
+	$ActivateButton.visible = false
 	$BackButton.visible = true
 	$UpgradeButton.visible = true
 func _on_back_button_pressed() -> void:
-	$ActivateButtonpass.visible = true
+	$ActivateButton.visible = true
 	$BackButton.visible = false
 	$UpgradeButton.visible = false
+
+
+func _on_attack_range_body_exited(body: Node2D) -> void:
+	print("OFF GUARD")
+	if body.type == "enemy":
+		self.enemiesInRange.erase(body)
+func _on_attack_range_body_entered(body: Node2D) -> void:
+	print("ON GUARD")
+	if body.type == "enemy":
+		self.enemiesInRange.append(body)
+		print(self.enemiesInRange)
+
+func _on_upgrade_button_pressed() -> void:
+	var up_tower= self.upgraded_tower.instantiate()
+	up_tower.position = self.position
+	if Variables.ore >= 100:
+		$up_tower.add_child(up_tower)
+		Variables.ore-=100
+		queue_free()
