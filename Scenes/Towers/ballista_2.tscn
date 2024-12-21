@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqkfbsmqng4yh"]
+[gd_scene load_steps=4 format=3 uid="uid://dqkfbsmqng4yh"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_a46g8"]
-[ext_resource type="Script" path="res://ballista_2.gd" id="2_lgq7i"]
+[ext_resource type="Script" path="res://Scenes/Towers/ballista_2.gd" id="2_lgq7i"]
+[ext_resource type="PackedScene" uid="uid://ctsdd6stiim2s" path="res://Scenes/Towers/ballista_3.tscn" id="3_rjcaq"]
 
 [node name="Ballista_2" instance=ExtResource("1_a46g8")]
 script = ExtResource("2_lgq7i")
+price = 150
+range = 18
+physical_dmg = 6.0
+attack_speeds = 1.7
+target = "first"
+upgraded_tower = ExtResource("3_rjcaq")
+
+[node name="BackButton" parent="." index="5"]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 96.0
+
+[node name="UpgradeButton" parent="." index="6"]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = -32.0

@@ -7,16 +7,24 @@
 [node name="Crystal_3" instance=ExtResource("1_h05nx")]
 script = ExtResource("2_4v30w")
 price = 200
+range = 20
 magical_dmg = 4.0
-attack_speeds = 0.3
+attack_speeds = 0.4
 target = "first"
+upgraded_tower = null
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_2dbd4")
 
-[node name="BackButton" parent="." index="4"]
+[node name="BackButton" parent="." index="5"]
 offset_left = -32.0
 offset_top = 32.0
 offset_right = 32.0
 offset_bottom = 96.0
 text = "Back"
+
+[node name="UpgradeButton" parent="." index="6"]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = -32.0

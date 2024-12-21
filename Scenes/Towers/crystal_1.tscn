@@ -1,17 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkbf7ugdkep7i"]
+[gd_scene load_steps=5 format=3 uid="uid://bkbf7ugdkep7i"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_2xqvd"]
 [ext_resource type="Script" path="res://Scenes/Towers/crystal_1.gd" id="2_h5qax"]
+[ext_resource type="PackedScene" uid="uid://bgh6qk8f64viq" path="res://Scenes/Towers/crystal_2.tscn" id="3_ni5ny"]
+
+[sub_resource type="Theme" id="Theme_suvou"]
 
 [node name="Crystal_1" instance=ExtResource("1_2xqvd")]
 script = ExtResource("2_h5qax")
 price = 100
+range = 15
 magical_dmg = 1.0
 attack_speeds = 0.5
+target = "first"
+upgraded_tower = ExtResource("3_ni5ny")
 
-[node name="BackButton" parent="." index="4"]
+[node name="CollisionShape2D" parent="Attack_range" index="0"]
+shape = null
+
+[node name="BackButton" parent="." index="5"]
 offset_left = -32.0
 offset_top = 32.0
 offset_right = 32.0
 offset_bottom = 96.0
-text = "Back"
+
+[node name="UpgradeButton" parent="." index="6"]
+offset_left = -35.0
+offset_top = -100.0
+offset_right = 37.0
+offset_bottom = -28.0
+theme = SubResource("Theme_suvou")
+theme_type_variation = &"FlatButton"

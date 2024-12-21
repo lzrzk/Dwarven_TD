@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c11enygbw5qd0" path="res://Assets/Assets_Enemies/Крыса_король.png" id="2_466px"]
 
 [node name="Rat_King" instance=ExtResource("1_66y7l")]
+z_index = 2
 hp = 100.0
 maxHp = 100.0
-speed = 100
+speed = 50
 shieldsPhysical = 0.9
 shieldsMagical = 0.8
 damage = 5

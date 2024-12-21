@@ -6,11 +6,17 @@
 
 [node name="Ballista_3" instance=ExtResource("1_gq0ga")]
 script = ExtResource("2_45ufu")
+price = 200
+range = 20
+physical_dmg = 10.0
+attack_speeds = 1.6
+target = "first"
+upgraded_tower = null
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_gw7jh")
 
-[node name="BackButton" parent="." index="4"]
+[node name="BackButton" parent="." index="5"]
 offset_left = -32.0
 offset_top = 32.0
 offset_right = 32.0

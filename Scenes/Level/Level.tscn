@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1q71mi3al1as"]
+[gd_scene load_steps=19 format=3 uid="uid://1q71mi3al1as"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_yfd3r"]
 [ext_resource type="PackedScene" uid="uid://dks8w6lf84vv0" path="res://Scenes/Level/MobSpawner.tscn" id="2_tr7wq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b7snwvpjli5tn" path="res://Assets/Assets_road/мусор_2.png" id="7_sklc6"]
 [ext_resource type="PackedScene" uid="uid://cwcfvm81lh4hr" path="res://Scenes/Towers/towerPicker.tscn" id="8_7mxip"]
 [ext_resource type="Texture2D" uid="uid://lglyb0hmuimv" path="res://Assets/Assets_road/Мусор_1.png" id="8_yx4ul"]
+[ext_resource type="Script" path="res://Scenes/Level/data_pad_label.gd" id="10_lmt4c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyw3"]
 texture = ExtResource("3_nbrci")
@@ -112,3 +113,12 @@ offset_right = 96.0
 offset_bottom = 32.0
 text = "Ore:"
 clip_text = true
+
+[node name="DataPadLabel" type="RichTextLabel" parent="."]
+offset_left = 32.0
+offset_top = 608.0
+offset_right = 1120.0
+offset_bottom = 649.0
+text = "Name:
+"
+script = ExtResource("10_lmt4c")

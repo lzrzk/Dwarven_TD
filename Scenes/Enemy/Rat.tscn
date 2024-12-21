@@ -5,7 +5,7 @@
 [node name="Rat" instance=ExtResource("1_pailb")]
 hp = 20.0
 maxHp = 20.0
-speed = 200
+speed = 100
 shieldsPhysical = 1.0
 shieldsMagical = 1.0
 damage = 1

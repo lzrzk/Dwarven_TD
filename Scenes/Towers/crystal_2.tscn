@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgh6qk8f64viq"]
+[gd_scene load_steps=5 format=3 uid="uid://bgh6qk8f64viq"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_gh0x7"]
 [ext_resource type="Script" path="res://Scenes/Towers/crystal_2.gd" id="2_7mj2k"]
+[ext_resource type="PackedScene" uid="uid://b0fxr8a1jedy7" path="res://Scenes/Towers/crystal_3.tscn" id="3_y5fc8"]
+[ext_resource type="Texture2D" uid="uid://bbkkqgojfijy1" path="res://Assets/Assets_towers/Кристал_база_2.png" id="4_k0wu0"]
 
 [node name="Crystal_2" instance=ExtResource("1_gh0x7")]
 script = ExtResource("2_7mj2k")
 price = 120
+range = 17
 magical_dmg = 2.0
 attack_speeds = 0.4
+target = "first"
+upgraded_tower = ExtResource("3_y5fc8")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("4_k0wu0")
+
+[node name="BackButton" parent="." index="5"]
+offset_left = -32.0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 96.0
+
+[node name="UpgradeButton" parent="." index="6"]
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = -32.0
