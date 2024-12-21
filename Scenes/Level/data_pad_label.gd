@@ -12,18 +12,28 @@ func _ready() -> void:
 			m_def = "⬛⬛⬜"
 		elif mag_def > 0 and mag_def < 0.4:
 			m_def = "⬛⬛⬛"
-		
-	if type == "enemy":
 		if ph_def == 1:
 			p_def = "⬜⬜⬜"
-		elif ph_def > 0.7:
+		elif ph_def > 0.7 and ph_def < 1:
 			p_def = "⬛⬜⬜"
-		elif ph_def > 0.4 and mag_def < 0.7:
+		elif ph_def > 0.4 and ph_def < 0.7:
 			p_def = "⬛⬛⬜"
-		elif ph_def > 0 and mag_def < 0.4:
+		elif ph_def > 0 and ph_def < 0.4:
 			p_def = "⬛⬛⬛"
-		
-		var information_text = ["DEF:", m_def, p_def ,"SPD:", speed, "HP:", HP]
+		if speed < 100:
+			spd = "⬜⬜⬜"
+		elif speed > 99 and speed < 200:
+			spd = "⬛⬜⬜"
+		elif speed > 199 and speed < 300:
+			spd = "⬛⬛⬜"
+		elif speed > 299:
+			spd = "⬛⬛⬛"
+	elif type = tower:
+	
+	
+	
+	elif
+		var information_text = ["DEF:", m_def, p_def ,"SPD:", spd, "HP:", HP]
 		
 	elif type == "tower":
 		var information_text = ["ATK:", m_atack, p_atack ,"SPD:", fire_rate,"RNG:", range]
