@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blnotdmrd5f84"
-path="res://.godot/imported/Кристал_база_2.png-c81721fea24fc0dafccfb734288a2d0b.ctex"
+uid="uid://boahwukfkpui1"
+path="res://.godot/imported/кристальный големит.png-bb12a47109744001eafd263577c94e9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Кристал_база_2.png"
-dest_files=["res://.godot/imported/Кристал_база_2.png-c81721fea24fc0dafccfb734288a2d0b.ctex"]
+source_file="res://Assets/Assets_Enemies/кристальный големит.png"
+dest_files=["res://.godot/imported/кристальный големит.png-bb12a47109744001eafd263577c94e9c.ctex"]
 
 [params]
 

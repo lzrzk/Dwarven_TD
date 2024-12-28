@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk72jo7c68r0y"]
+
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_e30hh"]
+[ext_resource type="Texture2D" uid="uid://dlkuysv30cyxc" path="res://Assets/Assets_Enemies/каменный големит.png" id="2_bqd0h"]
+
+[node name="dark_spawn" instance=ExtResource("1_e30hh")]
+hp = 10.0
+maxHp = 10.0
+speed = 120
+shieldsPhysical = 1.0
+shieldsMagical = 1.0
+damage = 1
+oreGiven = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_bqd0h")
+
+[node name="hp" parent="." index="2"]
+offset_left = -5.0
+offset_right = 5.0

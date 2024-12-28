@@ -11,6 +11,7 @@ speed = 50
 shieldsPhysical = 0.9
 shieldsMagical = 0.8
 damage = 5
+oreGiven = 50
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_466px")

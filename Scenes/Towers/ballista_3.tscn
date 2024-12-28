@@ -11,7 +11,6 @@ range = 20
 physical_dmg = 10.0
 attack_speeds = 1.6
 target = "first"
-upgraded_tower = null
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_gw7jh")

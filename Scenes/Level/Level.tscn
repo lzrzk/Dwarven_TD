@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://1q71mi3al1as"]
+[gd_scene load_steps=20 format=3 uid="uid://1q71mi3al1as"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_yfd3r"]
 [ext_resource type="PackedScene" uid="uid://dks8w6lf84vv0" path="res://Scenes/Level/MobSpawner.tscn" id="2_tr7wq"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcfvm81lh4hr" path="res://Scenes/Towers/towerPicker.tscn" id="8_7mxip"]
 [ext_resource type="Texture2D" uid="uid://lglyb0hmuimv" path="res://Assets/Assets_road/Мусор_1.png" id="8_yx4ul"]
 [ext_resource type="Script" path="res://Scenes/Level/data_pad_label.gd" id="10_lmt4c"]
+[ext_resource type="Texture2D" uid="uid://mfjurv2sxdii" path="res://Assets/Assets_towers/иконка тмена 32х32.png" id="11_ftejx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyw3"]
 texture = ExtResource("3_nbrci")
@@ -52,7 +53,7 @@ sources/7 = SubResource("TileSetAtlasSource_85aik")
 
 [sub_resource type="Curve2D" id="Curve2D_gnm0b"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -32, 480, 0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 1056, 416, 0, 0, 0, 0, 1120, 416, 0, 0, 0, 0, 1120, 224, 0, 0, 0, 0, 32, 224, 0, 0, 0, 0, 32, 96, 0, 0, 0, 0, 992, 96, 0, 0, 0, 0, 992, 32)
+"points": PackedVector2Array(0, 0, 0, 0, -32, 480, 0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 1056, 416, 0, 0, 0, 0, 1120, 416, 0, 0, 0, 0, 1120, 224, 0, 0, 0, 0, 32, 224, 0, 0, 0, 0, 32, 96, 0, 0, 0, 0, 992, 96, 0, 0, 0, 0, 988, -135)
 }
 point_count = 9
 
@@ -66,7 +67,7 @@ offset_left = -32.0
 offset_top = -32.0
 offset_right = 2644.0
 offset_bottom = 1316.0
-color = Color(0.188235, 0.188235, 0.188235, 1)
+color = Color(0.333333, 0.333333, 0.333333, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jlgoc")
@@ -115,10 +116,27 @@ text = "Ore:"
 clip_text = true
 
 [node name="DataPadLabel" type="RichTextLabel" parent="."]
-offset_left = 32.0
+visible = false
+offset_left = 59.0
 offset_top = 608.0
 offset_right = 1120.0
 offset_bottom = 649.0
-text = "Name:
+text = "
 "
 script = ExtResource("10_lmt4c")
+
+[node name="HideInfoButton" type="Button" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = 608.0
+offset_right = 39.0
+offset_bottom = 648.0
+icon = ExtResource("11_ftejx")
+flat = true
+
+[node name="LivesLabel" type="Label" parent="."]
+offset_left = 110.0
+offset_right = 177.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="HideInfoButton" to="DataPadLabel" method="_on_hide_info_button_pressed"]

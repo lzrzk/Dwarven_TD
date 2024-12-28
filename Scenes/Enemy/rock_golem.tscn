@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5y3wuhjsbvm8"]
+
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_1qges"]
+[ext_resource type="Texture2D" uid="uid://c5rbtfa58ac56" path="res://Assets/Assets_Enemies/каменный голем.png" id="2_b6m2w"]
+
+[node name="Rock_golem" instance=ExtResource("1_1qges")]
+hp = 200.0
+maxHp = 200.0
+speed = 20
+shieldsPhysical = 0.2
+shieldsMagical = 1.0
+damage = 3
+oreGiven = 50
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_b6m2w")
+
+[node name="hp" parent="." index="2"]
+offset_left = -14.0
+offset_right = 13.0
+
+[node name="InfoButton" parent="." index="3"]
+offset_left = -13.0

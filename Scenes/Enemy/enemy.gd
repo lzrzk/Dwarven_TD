@@ -7,16 +7,14 @@ class_name enemy
 @onready var type = "enemy"
 
 @export var speed:int
-
+@export var spawnOnDeath:bool
+@export var spawnedOnDeath:PackedScene
 @export var shieldsPhysical:float
-
 @export var shieldsMagical:float
-
 @export var damage:int
-
 @export var path:Path2D
-
 @export var pathFollow:PathFollow2D
+@export var oreGiven:int
 
 func _ready() -> void:
 	self.pathFollow=PathFollow2D.new()
@@ -29,6 +27,13 @@ func _process(delta: float) -> void:
 	self.rotation = self.pathFollow.rotation
 	$Sprite2D.flip_v = self.rotation > 0
 	$hp.value = float(hp)/float(maxHp) *100
+	
+	if self.pathFollow.get_progress_ratio() >= 0.98:
+		
+		Variables.lives -= self.damage
+		self.queue_free()
+	
+	
 
 
 func hit(magical_dmg, physical_dmg, true_dmg) -> void:
@@ -38,4 +43,15 @@ func hit(magical_dmg, physical_dmg, true_dmg) -> void:
 	var incomingDmg = physDmgTrue + magDmgTrue + true_dmg
 	self.hp -= incomingDmg
 	if hp <= 0:
+#		if spawnOnDeath == true:
+			
+			
+			
+		Variables.ore += oreGiven
 		self.queue_free()
+
+
+
+
+func _on_info_button_pressed() -> void:
+	Variables.selectedNode = self

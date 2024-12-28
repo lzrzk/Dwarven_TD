@@ -8,4 +8,11 @@ func _ready() -> void:
 	$MobSpawner.startWave()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	Variables.ore+=1
+	$OreLabel.text = "Ore:" + str(Variables.ore)
+	$LivesLabel.text = "Lives" + str(Variables.lives)
+	if Variables.lives <= 0:
+		get_tree().change_scene_to_file("res://Scenes/Menu/Mainmenu.tscn")
+	
+	
+	if len($enemies.get_children()) == 0:
+		$MobSpawner.startWave()

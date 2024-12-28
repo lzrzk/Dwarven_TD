@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://blfd14exym8bd"]
+
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_h2vxy"]
+[ext_resource type="Texture2D" uid="uid://dribpjcdkaffm" path="res://Assets/Assets_Enemies/крыса гоньчая.png" id="2_ww4vg"]
+
+[node name="Rat_hound" instance=ExtResource("1_h2vxy")]
+hp = 50.0
+maxHp = 50.0
+speed = 200
+shieldsPhysical = 1.0
+shieldsMagical = 1.0
+damage = 3
+oreGiven = 20
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ww4vg")
+
+[node name="hp" parent="." index="2"]
+offset_left = -14.0
+offset_right = 13.0
+
+[node name="InfoButton" parent="." index="3"]
+offset_left = -13.0

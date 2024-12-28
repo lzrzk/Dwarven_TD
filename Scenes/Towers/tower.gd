@@ -8,6 +8,7 @@ class_name Tower
 @export var target:String
 @export var enemiesInRange:Array
 @export var upgraded_tower:PackedScene
+@onready var type = "tower"
 
 
 func _process(delta: float) -> void:
@@ -32,11 +33,13 @@ func _on_activate_button_pressed() -> void:
 	$ActivateButton.visible = false
 	$BackButton.visible = true
 	$UpgradeButton.visible = true
+	Variables.selectedNode = self
 
 func _on_back_button_pressed() -> void:
 	$ActivateButton.visible = true
 	$BackButton.visible = false
 	$UpgradeButton.visible = false
+
 
 func _ready() -> void:
 	var range_shape = CircleShape2D.new()

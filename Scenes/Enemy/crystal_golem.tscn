@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cprbrxumvy62e"]
+
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_vyqk6"]
+[ext_resource type="Texture2D" uid="uid://bvcokurqqgec5" path="res://Assets/Assets_Enemies/кристальный голем.png" id="2_kfy12"]
+
+[node name="Crystal_golem" instance=ExtResource("1_vyqk6")]
+hp = 50.0
+maxHp = 50.0
+speed = 150
+shieldsPhysical = 1.0
+shieldsMagical = 0.2
+damage = 3
+oreGiven = 50
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_kfy12")
+
+[node name="hp" parent="." index="2"]
+offset_left = -14.0
+offset_right = 13.0
+
+[node name="InfoButton" parent="." index="3"]
+offset_left = -13.0

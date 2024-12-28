@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c1he6q7mfky47" path="res://Assets/Assets_Enemies/Крыса.png" id="2_hhp0v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_foxfb"]
-radius = 11.0
-height = 22.0
+radius = 18.0
+height = 36.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00ed5"]
 bg_color = Color(0.263729, 0.023624, 2.40654e-08, 1)
@@ -14,6 +14,7 @@ bg_color = Color(0.263729, 0.023624, 2.40654e-08, 1)
 bg_color = Color(0, 0.726047, 0.178912, 1)
 
 [node name="Enemy" type="CharacterBody2D"]
+input_pickable = true
 script = ExtResource("1_nggcq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,3 +33,12 @@ offset_bottom = 12.0
 theme_override_styles/background = SubResource("StyleBoxFlat_00ed5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_majs0")
 show_percentage = false
+
+[node name="InfoButton" type="Button" parent="."]
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 11.0
+offset_bottom = 8.0
+flat = true
+
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
