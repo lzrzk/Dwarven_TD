@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://2e4rs75jc8dj"]
+
+[ext_resource type="Script" path="res://Scenes/Level/rest_time.gd" id="1_0nbdj"]
+
+[node name="restTime" type="Node"]
+script = ExtResource("1_0nbdj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1255.0
+offset_bottom = 773.0
+color = Color(0.26, 0.244833, 0.234, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 222.0
+offset_top = -2.0
+offset_right = 926.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 120
+text = "Rest Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="oreButton" type="Button" parent="."]
+offset_left = 491.0
+offset_top = 284.0
+offset_right = 556.0
+offset_bottom = 315.0
+text = "Dig +5"
+
+[node name="digUpgradeButton" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 252.0
+offset_right = 570.0
+offset_bottom = 283.0
+text = "5 Upgrade"
+
+[connection signal="pressed" from="oreButton" to="." method="_on_ore_button_pressed"]
+[connection signal="pressed" from="digUpgradeButton" to="." method="_on_dig_upgrade_button_pressed"]

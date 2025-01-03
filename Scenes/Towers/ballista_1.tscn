@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qph4hggfa467"]
+[gd_scene load_steps=5 format=3 uid="uid://qph4hggfa467"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_546ws"]
 [ext_resource type="Script" path="res://Scenes/Towers/ballista_1.gd" id="2_wdpgs"]
 [ext_resource type="PackedScene" uid="uid://dqkfbsmqng4yh" path="res://Scenes/Towers/ballista_2.tscn" id="3_cknb8"]
+[ext_resource type="Texture2D" uid="uid://35dqibwarwif" path="res://Assets/Assets_towers/баллиста база 1.png" id="4_47bwy"]
 
 [node name="ballista_1" instance=ExtResource("1_546ws")]
 script = ExtResource("2_wdpgs")
@@ -12,6 +13,9 @@ physical_dmg = 5.0
 attack_speeds = 2.0
 target = "first"
 upgraded_tower = ExtResource("3_cknb8")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("4_47bwy")
 
 [node name="BackButton" parent="." index="5"]
 offset_left = -32.0

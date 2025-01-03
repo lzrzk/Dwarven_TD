@@ -43,8 +43,8 @@ func hit(magical_dmg, physical_dmg, true_dmg) -> void:
 	var incomingDmg = physDmgTrue + magDmgTrue + true_dmg
 	self.hp -= incomingDmg
 	if hp <= 0:
-#		if spawnOnDeath == true:
-			
+		if spawnOnDeath == true:
+			pass
 			
 			
 		Variables.ore += oreGiven

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dribpjcdkaffm" path="res://Assets/Assets_Enemies/крыса гоньчая.png" id="2_ww4vg"]
 
 [node name="Rat_hound" instance=ExtResource("1_h2vxy")]
-hp = 50.0
-maxHp = 50.0
+hp = 25.0
+maxHp = 25.0
 speed = 200
 shieldsPhysical = 1.0
 shieldsMagical = 1.0

@@ -59,9 +59,9 @@ func _on_attack_range_body_entered(body: Node2D) -> void:
 func _on_upgrade_button_pressed() -> void:
 	var up_tower= self.upgraded_tower.instantiate()
 	up_tower.position = self.position
-	if Variables.ore >= 100:
+	if Variables.ore >= self.price:
 		$"../".add_child(up_tower)
-		Variables.ore-=100
+		Variables.ore-=self.price
 		queue_free()
 
 

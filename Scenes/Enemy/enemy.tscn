@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c1he6q7mfky47" path="res://Assets/Assets_Enemies/Крыса.png" id="2_hhp0v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_foxfb"]
-radius = 18.0
-height = 36.0
+radius = 26.0
+height = 52.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00ed5"]
 bg_color = Color(0.263729, 0.023624, 2.40654e-08, 1)

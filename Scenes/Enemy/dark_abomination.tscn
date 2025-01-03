@@ -19,5 +19,5 @@ oreGiven = 20
 texture = ExtResource("3_4aqa0")
 
 [node name="hp" parent="." index="2"]
-offset_left = -5.0
-offset_right = 5.0
+offset_left = -10.0
+offset_right = 10.0

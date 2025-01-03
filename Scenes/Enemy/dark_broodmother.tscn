@@ -1,17 +1,35 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6nsauanr76j4"]
 
 [ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_exs6q"]
-[ext_resource type="Script" path="res://dark_broodmother.gd" id="2_4f3ax"]
-[ext_resource type="Texture2D" uid="uid://dflou5bvory55" path="res://Assets/Assets_Enemies/Ужас тьмы.png" id="3_6vdyt"]
+[ext_resource type="Script" path="res://Scenes/Enemy/dark_broodmother.gd" id="2_4f3ax"]
+[ext_resource type="Texture2D" uid="uid://d4b344uk3gjtf" path="res://Assets/Assets_Enemies/матка тьмы.png" id="3_43fs7"]
 
 [node name="dark_broodmother" instance=ExtResource("1_exs6q")]
 script = ExtResource("2_4f3ax")
+hp = 250.0
+maxHp = 250.0
+speed = 80
+shieldsPhysical = 1.0
+shieldsMagical = 1.0
+damage = 5
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_6vdyt")
+texture = ExtResource("3_43fs7")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(6, -5)
 
 [node name="hp" parent="." index="2"]
-offset_left = -5.0
-offset_right = 5.0
+offset_left = -17.0
+offset_right = 21.0
+
+[node name="InfoButton" parent="." index="3"]
+offset_left = -18.0
+offset_top = -27.0
+offset_right = 28.0
 
 [node name="SpawnTimer" type="Timer" parent="." index="4"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

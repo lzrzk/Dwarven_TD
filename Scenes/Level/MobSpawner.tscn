@@ -9,3 +9,5 @@ script = ExtResource("1_0hr5s")
 one_shot = true
 
 [node name="WaveTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
