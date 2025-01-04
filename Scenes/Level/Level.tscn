@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://1q71mi3al1as"]
+[gd_scene load_steps=30 format=3 uid="uid://1q71mi3al1as"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_yfd3r"]
 [ext_resource type="PackedScene" uid="uid://dks8w6lf84vv0" path="res://Scenes/Level/MobSpawner.tscn" id="2_tr7wq"]
 [ext_resource type="Texture2D" uid="uid://c3hw1siey4guf" path="res://Assets/Assets_road/Дорога_кривая.png" id="3_nbrci"]
 [ext_resource type="Texture2D" uid="uid://e8lfhy08s7l6" path="res://Assets/Assets_road/Дорога_прямая.png" id="4_vx0tg"]
+[ext_resource type="Texture2D" uid="uid://cdatj3pws7ly0" path="res://Assets/Assets_road/стена 1.png" id="5_3opko"]
 [ext_resource type="Texture2D" uid="uid://dguab8tgnll16" path="res://Assets/Assets_road/Ворота.png" id="5_mch6w"]
 [ext_resource type="Texture2D" uid="uid://d12jvha8vegp8" path="res://Assets/Assets_road/мусор_3.png" id="6_02jt2"]
 [ext_resource type="Texture2D" uid="uid://ccjykhctcxnsg" path="res://Assets/Assets_road/фон сталактит.png" id="6_kmb6m"]
@@ -14,6 +15,7 @@
 [ext_resource type="Script" path="res://Scenes/Level/data_pad_label.gd" id="10_lmt4c"]
 [ext_resource type="Texture2D" uid="uid://bsh82303oektu" path="res://Assets/Assets_road/фон неудача путника.png" id="11_3gfkk"]
 [ext_resource type="Texture2D" uid="uid://mfjurv2sxdii" path="res://Assets/Assets_towers/иконка тмена 32х32.png" id="11_ftejx"]
+[ext_resource type="Texture2D" uid="uid://cll0uohymrygl" path="res://Assets/Assets_road/стена знамя 1.png" id="13_7e3no"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyw3"]
 texture = ExtResource("3_nbrci")
@@ -22,6 +24,11 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6rcq"]
 texture = ExtResource("4_vx0tg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gdfqs"]
+texture = ExtResource("5_3opko")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
@@ -60,6 +67,11 @@ texture = ExtResource("11_3gfkk")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihcig"]
+texture = ExtResource("13_7e3no")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_jlgoc"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_6nyw3")
@@ -71,6 +83,8 @@ sources/7 = SubResource("TileSetAtlasSource_85aik")
 sources/3 = SubResource("TileSetAtlasSource_ncdsv")
 sources/4 = SubResource("TileSetAtlasSource_squs4")
 sources/8 = SubResource("TileSetAtlasSource_6ivw7")
+sources/9 = SubResource("TileSetAtlasSource_ihcig")
+sources/10 = SubResource("TileSetAtlasSource_gdfqs")
 
 [sub_resource type="Curve2D" id="Curve2D_gnm0b"]
 _data = {
@@ -93,7 +107,7 @@ color = Color(0.333333, 0.333333, 0.333333, 1)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jlgoc")
 format = 2
-layer_0/tile_data = PackedInt32Array(15, 2, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 196622, 1, 805306368, 196621, 1, 805306368, 196620, 1, 805306368, 196619, 1, 805306368, 196618, 1, 805306368, 196617, 1, 805306368, 196616, 1, 805306368, 196615, 1, 805306368, 196614, 1, 805306368, 196613, 1, 805306368, 196612, 1, 805306368, 196611, 1, 805306368, 196610, 1, 805306368, 196609, 1, 805306368, 196623, 1, 805306368, 196624, 1, 805306368, 196625, 0, 1610612736, 196608, 0, 1342177280, 65536, 0, 805306368, 65551, 0, 0, 131072, 1, 1610612736, 393233, 0, 0, 327697, 1, 1610612736, 262161, 1, 1610612736, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 0, 0, 393232, 0, 805306368, 458752, 1, 0, 327693, 8, 0, 262152, 8, 0, 393217, 3, 0, 131076, 4, 0, 131083, 4, 0, 131087, 4, 0, 327685, 3, 0, 262150, 3, 0, 393224, 3, 0, 262156, 4, 0, 131077, 3, 0, 327695, 3, 0, 131089, 3, 0, 262144, 3, 0, 589840, 8, 0, 589827, 8, 0, 589836, 3, 0, 589829, 0, 805306368, 589830, 1, 0, 589831, 3, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 655372, 1, 1342177280, 655365, 1, 1342177280, 524298, 3, 0)
+layer_0/tile_data = PackedInt32Array(15, 2, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 196622, 1, 805306368, 196621, 1, 805306368, 196620, 1, 805306368, 196619, 1, 805306368, 196618, 1, 805306368, 196617, 1, 805306368, 196616, 1, 805306368, 196615, 1, 805306368, 196614, 1, 805306368, 196613, 1, 805306368, 196612, 1, 805306368, 196611, 1, 805306368, 196610, 1, 805306368, 196609, 1, 805306368, 196623, 1, 805306368, 196624, 1, 805306368, 196625, 0, 1610612736, 196608, 0, 1342177280, 65536, 0, 805306368, 65551, 0, 0, 131072, 1, 1610612736, 393233, 0, 0, 327697, 1, 1610612736, 262161, 1, 1610612736, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 0, 0, 393232, 0, 805306368, 458752, 1, 0, 327693, 8, 0, 262152, 8, 0, 393217, 3, 0, 131076, 4, 0, 131083, 4, 0, 131087, 4, 0, 327685, 3, 0, 262150, 3, 0, 393224, 3, 0, 262156, 4, 0, 131077, 3, 0, 327695, 3, 0, 131089, 3, 0, 262144, 3, 0, 589840, 8, 0, 589827, 8, 0, 589836, 3, 0, 589829, 0, 805306368, 589830, 1, 0, 589831, 3, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 655372, 1, 1342177280, 655365, 1, 1342177280, 524298, 3, 0, 14, 9, 0, 13, 10, 0, 11, 10, 0, 9, 10, 0, 10, 10, 0, 4, 10, 0, 5, 10, 0, 2, 9, 0, 1, 10, 0, 12, 9, 0, 7, 10, 0, 8, 9, 0, 3, 10, 0, 6, 9, 0, 17, 10, 0, 16, 9, 0, 0, 10, 0)
 layer_1/name = "Layer1"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(458754, 6, 0, 458757, 6, 0, 458759, 6, 0, 196618, 6, 0, 65545, 6, 1879048192, 65551, 6, 1879048192, 393233, 6, 536870912, 196614, 6, 0, 65539, 6, 0, 65547, 6, 805306368, 196608, 6, 805306368, 458760, 5, 1342177280, 196616, 5, 1610612736, 65546, 5, 1073741824, 65542, 5, 1342177280, 458758, 7, 0, 458761, 7, 0, 458765, 7, 0, 458767, 7, 0, 393232, 7, 1610612736, 65544, 7, 0, 65540, 7, 0, 65537, 7, 0, 131072, 7, 1610612736, 196611, 7, 805306368, 196619, 7, 805306368, 196624, 7, 805306368, 262161, 7, 1610612736, 196622, 6, 0, 196620, 6, 1342177280, 589833, 7, 0, 589835, 7, 0, 589829, 6, 1610612736, 589830, 6, 1342177280, 262146, 4, 0)
