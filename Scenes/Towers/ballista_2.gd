@@ -1,1 +1,1 @@
-extends Tower
+extends balista

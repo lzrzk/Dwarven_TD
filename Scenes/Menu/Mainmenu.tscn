@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs6gh1agbqjon"]
+[gd_scene load_steps=14 format=3 uid="uid://bs6gh1agbqjon"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/mainmenu.gd" id="1_lvauq"]
 [ext_resource type="Texture2D" uid="uid://ddy1qjwovi11x" path="res://Assets/Assets_menu/Кнопка старт.png" id="2_n2qb4"]
@@ -10,26 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://6la76cffjtg" path="res://Assets/Assets_Enemies/Крыса_Легкая броня.png" id="8_6hgny"]
 [ext_resource type="Texture2D" uid="uid://dribpjcdkaffm" path="res://Assets/Assets_Enemies/крыса гоньчая.png" id="9_ir4p5"]
 [ext_resource type="Texture2D" uid="uid://c7ax0qmdc22qq" path="res://Assets/Assets_Enemies/Крыса_рыцарь.png" id="10_6qbjo"]
+[ext_resource type="Texture2D" uid="uid://bv5nth4hudewl" path="res://Assets/Assets_towers/иконка балиста.png" id="11_mevfp"]
+[ext_resource type="Texture2D" uid="uid://bqbic4hi7ceem" path="res://Assets/Assets_towers/иконка_кристал.png" id="12_xv1sv"]
+[ext_resource type="Texture2D" uid="uid://cx1a6v6ip3tyv" path="res://Assets/Assets_menu/Главное название.png" id="13_vp64a"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_lvauq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -40.0
-offset_top = -49.0
-offset_right = 1215.0
-offset_bottom = 724.0
+offset_left = -46.0
+offset_top = -38.0
+offset_right = 1209.0
+offset_bottom = 735.0
 color = Color(0.26, 0.244833, 0.234, 1)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 221.0
-offset_top = 85.0
-offset_right = 925.0
-offset_bottom = 250.0
-theme_override_font_sizes/font_size = 120
-text = "Dwraven TD"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 offset_left = 522.0
@@ -58,7 +51,7 @@ texture = ExtResource("5_edatd")
 flip_h = true
 
 [node name="ПорождениеТьмы" type="Sprite2D" parent="."]
-position = Vector2(822, 94)
+position = Vector2(611, 92)
 scale = Vector2(5, 5)
 texture = ExtResource("6_j2x8s")
 
@@ -84,4 +77,31 @@ position = Vector2(303, 344)
 scale = Vector2(5, 5)
 texture = ExtResource("10_6qbjo")
 
+[node name="ИконкаБалиста" type="Sprite2D" parent="."]
+position = Vector2(75, 352)
+rotation = 1.4399
+scale = Vector2(5.06616, 4.35208)
+texture = ExtResource("11_mevfp")
+
+[node name="ИконкаКристал" type="Sprite2D" parent="."]
+position = Vector2(1069, 277)
+rotation = 2.57785
+scale = Vector2(4.84375, 6.125)
+texture = ExtResource("12_xv1sv")
+
+[node name="ГлавноеНазвание" type="Sprite2D" parent="."]
+position = Vector2(588, 188)
+texture = ExtResource("13_vp64a")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 539.0
+offset_right = 799.0
+offset_bottom = 635.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 64
+text = "Debug Mode"
+flat = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

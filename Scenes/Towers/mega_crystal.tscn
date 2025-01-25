@@ -1,28 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://j148fhwv2l80"]
+[gd_scene load_steps=6 format=3 uid="uid://dkl3l4nwl0iea"]
 
-[ext_resource type="Script" path="res://Scenes/Towers/tower.gd" id="1_0s22x"]
-[ext_resource type="Texture2D" uid="uid://dag05kn6reqb4" path="res://Assets/Assets_towers/Кристал_база_1.png" id="2_xxfbv"]
-[ext_resource type="Script" path="res://Scenes/Towers/polygon_2d.gd" id="3_tub6i"]
-[ext_resource type="Texture2D" uid="uid://ceutvamf1tom0" path="res://Assets/Assets_towers/иконка_улучшение.png" id="4_f1qtk"]
-[ext_resource type="Texture2D" uid="uid://cptgwxenvpj4r" path="res://Assets/Assets_towers/отмена_большая.png" id="4_ombqm"]
+[ext_resource type="Script" path="res://Scenes/Towers/mega_crystal.gd" id="1_lwqig"]
+[ext_resource type="Texture2D" uid="uid://btqdvahpc4aa0" path="res://Assets/Assets_towers/мега кристал.png" id="2_0km51"]
+[ext_resource type="Script" path="res://Scenes/Towers/polygon_2d.gd" id="3_b7gl0"]
+[ext_resource type="Texture2D" uid="uid://cptgwxenvpj4r" path="res://Assets/Assets_towers/отмена_большая.png" id="4_bsbib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_863ce"]
-radius = 226.274
+radius = 260.325
 
-[node name="Tower_Base" type="Node2D"]
-script = ExtResource("1_0s22x")
+[node name="Mega_crystal" type="Node2D"]
+script = ExtResource("1_lwqig")
+range = 250
+physical_dmg = 2.0
+magical_dmg = 8.0
+attack_speeds = 0.2
+target = "tri-shot"
 
 [node name="attackTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xxfbv")
+texture = ExtResource("2_0km51")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
 visibility_layer = 512
 z_index = 100
-script = ExtResource("3_tub6i")
+script = ExtResource("3_b7gl0")
 
 [node name="Attack_range" type="Area2D" parent="."]
 
@@ -41,33 +45,11 @@ mouse_default_cursor_shape = 2
 [node name="BackButton" type="Button" parent="."]
 visible = false
 z_index = 20
-offset_left = -33.0
-offset_top = 36.0
-offset_right = 38.0
-offset_bottom = 151.0
-icon = ExtResource("4_ombqm")
-flat = true
-
-[node name="UpgradeButton" type="Button" parent="."]
-visible = false
-z_index = 20
-offset_left = -36.0
-offset_top = -110.0
-offset_right = 36.0
-offset_bottom = -38.0
-mouse_default_cursor_shape = 2
-icon = ExtResource("4_f1qtk")
-flat = true
-
-[node name="UpgradeButton2" type="Button" parent="."]
-visible = false
-z_index = 20
-offset_left = -36.0
-offset_top = -110.0
-offset_right = 36.0
-offset_bottom = -38.0
-mouse_default_cursor_shape = 2
-icon = ExtResource("4_f1qtk")
+offset_left = -38.0
+offset_top = -35.0
+offset_right = 34.0
+offset_bottom = 37.0
+icon = ExtResource("4_bsbib")
 flat = true
 
 [connection signal="timeout" from="attackTimer" to="." method="shoot"]
@@ -79,5 +61,3 @@ flat = true
 [connection signal="mouse_exited" from="ActivateButton" to="." method="_on_activate_button_mouse_exited"]
 [connection signal="pressed" from="ActivateButton" to="." method="_on_activate_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="UpgradeButton2" to="." method="_on_upgrade_button_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhun4qropyu0p"]
+
+[ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_iuele"]
+[ext_resource type="Texture2D" uid="uid://br1dt3cs5c5ak" path="res://Assets/Assets_towers/Ледяной кристал.png" id="2_cl2dm"]
+
+[node name="Ice_crystal_1" instance=ExtResource("1_iuele")]
+price = 150
+fire_trough_ice = -4
+range = 22
+physical_dmg = 1.0
+magical_dmg = 4.0
+attack_speeds = 0.4
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_cl2dm")

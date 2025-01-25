@@ -15,11 +15,17 @@ func _process(delta: float) -> void:
 	$WaveLabel.text = "Wave: " + str(Variables.waveNumber)
 	
 	if len($enemies.get_children()) == 0 and endwave:
-		get_tree().change_scene_to_file("res://Scenes/Level/rest_time.tscn")
+		$Window.visible = true
 		if Variables.next_wave:
 			$MobSpawner.startWave()
 			endwave = false
+			$Window.visible = false
+			Variables.next_wave = false
 
 
 func _on_mob_spawner_endwave() -> void:
 	endwave = true
+
+
+func _on_crystal_button_pressed() -> void:
+	pass # Replace with function body.

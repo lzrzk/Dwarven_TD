@@ -1,6 +1,7 @@
 extends Node
 class_name Tower
 @export var price:int
+@export var fire_trough_ice:int
 @export var range:int
 @export var physical_dmg:float
 @export var magical_dmg:float
@@ -8,6 +9,7 @@ class_name Tower
 @export var target:String
 @export var enemiesInRange:Array
 @export var upgraded_tower:PackedScene
+@export var upgraded_tower2:PackedScene
 @onready var type = "tower"
 
 
@@ -26,27 +28,34 @@ func shoot():
 		_:
 			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,0)
 			print("insuficient target")
+		"tri-shot":
+			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,3)
+			self.enemiesInRange[1].hit(self.physical_dmg/2,self.magical_dmg/2,)
+			self.enemiesInRange[2].hit(self.physical_dmg/3,self.magical_dmg/3,)
 
 
 
 func _on_activate_button_pressed() -> void:
 	$ActivateButton.visible = false
 	$BackButton.visible = true
-	$UpgradeButton.visible = true
+	if upgraded_tower != null or upgraded_tower2 !=null:
+		$UpgradeButton.visible = true
 	Variables.selectedNode = self
+	if upgraded_tower != upgraded_tower2:
+		$UpgradeButton2.visible = true
 
 func _on_back_button_pressed() -> void:
 	$ActivateButton.visible = true
 	$BackButton.visible = false
 	$UpgradeButton.visible = false
-
+	$UpgradeButton2.visible = false
 
 func _ready() -> void:
 	var range_shape = CircleShape2D.new()
 	range_shape.radius = self.range * 10   #ConversionRate
 	$Attack_range/CollisionShape2D.shape = range_shape
-	
-	
+	if upgraded_tower2 == null:
+		upgraded_tower2 =  upgraded_tower
 	
 func _on_attack_range_body_exited(body: Node2D) -> void:
 	if body.type == "enemy":

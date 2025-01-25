@@ -8,7 +8,7 @@
 script = ExtResource("2_45ufu")
 price = 200
 range = 20
-physical_dmg = 15.0
+physical_dmg = 20.0
 attack_speeds = 1.5
 target = "first"
 
@@ -20,4 +20,6 @@ offset_left = -32.0
 offset_top = 32.0
 offset_right = 32.0
 offset_bottom = 96.0
-text = "Back"
+
+[node name="UpgradeButton" parent="." index="6"]
+offset_bottom = -32.0

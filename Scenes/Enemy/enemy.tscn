@@ -41,4 +41,9 @@ offset_right = 11.0
 offset_bottom = 8.0
 flat = true
 
+[node name="FireFrostTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
 [connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="timeout" from="FireFrostTimer" to="." method="_on_fire_frost_timer_timeout"]

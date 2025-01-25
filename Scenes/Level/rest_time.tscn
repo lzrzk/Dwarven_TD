@@ -9,6 +9,7 @@ script = ExtResource("1_0nbdj")
 offset_right = 1255.0
 offset_bottom = 773.0
 color = Color(0.26, 0.244833, 0.234, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 222.0

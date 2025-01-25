@@ -47,6 +47,15 @@ func _ready() -> void:
 	waves[9]= [[11,5]]
 	waves[10]= [[1,2],[2,2],[1,2]]
 	waves[11]= [[3,10]]
+	waves[12]= [[1,2],[0,3],[2,4],[0,3],[2,2],[11,5],[1,4],[0,3],[1,3],[0,5]]
+	waves[13]= [[12,5]]
+	waves[14]= [[4,3],[4,2],[4,1],[4,3],[4,6],[4,1]]
+	waves[15]= [[5,5]]
+	waves[16]= [[1,1],[1,2],[0,3],[2,3],[2,1],[12,5],[1,1],[2,2],[1,3],[1,1]]
+	waves[17]= [[6,3],[6,5],[6,3],[6,1],[6,5],[6,1]]
+	waves[18]= [[7,5]]
+	waves[19]= [[9,1],[8,2],[9,3],[9,3],[8,1],[9,5],[9,1],[9,2],[8,3],[8,1]]
+	waves[20]= [[10,10]]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -68,3 +77,7 @@ func _on_enemy_timer_timeout() -> void:
 	else:
 		Variables.waveNumber+=1
 		endwave.emit()
+
+
+func _on_mega_crystal_button_pressed() -> void:
+	pass # Replace with function body.
