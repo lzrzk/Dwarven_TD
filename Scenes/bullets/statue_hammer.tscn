@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dva2iiknvpwsj"]
+
+[ext_resource type="Script" path="res://Scenes/bullets/statue_hammer.gd" id="1_ad1fq"]
+[ext_resource type="Texture2D" uid="uid://cihjdaffqwcxf" path="res://Assets/Assets_towers/удар статуи.png" id="2_40sug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prank"]
+size = Vector2(20, 26)
+
+[node name="StatueHammer" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_ad1fq")
+
+[node name="ExpirationTimer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_40sug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_prank")

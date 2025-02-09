@@ -4,7 +4,7 @@ extends Area2D
 @export var speed:float = 30
 @export var physical_dmg:float
 @export var magical_dmg:float
-
+@export var fire_trough_ice:float
 @export var angle:float = 0
 @export var enemy:CharacterBody2D
 @export var type:String = "bullet"
@@ -26,7 +26,7 @@ func _process(delta):
 func _on_body_entered(body: Node2D) -> void:
 	if body.type == "enemy" and can_damage:
 		can_damage = false
-		body.hit(physical_dmg,magical_dmg,0)
+		body.hit(physical_dmg,magical_dmg,fire_trough_ice,0)
 		queue_free()
 
 	

@@ -80,4 +80,5 @@ flat = true
 [connection signal="pressed" from="ActivateButton" to="." method="_on_activate_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="UpgradeButton2" to="." method="_on_upgrade_button_2_pressed"]
 [connection signal="pressed" from="UpgradeButton2" to="." method="_on_upgrade_button_pressed"]

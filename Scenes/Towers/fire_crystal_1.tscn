@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvokdnh75k0f7"]
+[gd_scene load_steps=4 format=3 uid="uid://bvokdnh75k0f7"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_o4t2b"]
+[ext_resource type="Script" path="res://Scenes/Towers/crystal_1.gd" id="2_36d8f"]
 [ext_resource type="Texture2D" uid="uid://duaeflw82gis4" path="res://Assets/Assets_towers/Огненый кристал.png" id="2_gcy34"]
 
 [node name="Fire_crystal_1" instance=ExtResource("1_o4t2b")]
-price = 150
+script = ExtResource("2_36d8f")
+price = 200
 fire_trough_ice = 4
 range = 20
 magical_dmg = 5.0
 attack_speeds = 0.4
+target = "first"
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_gcy34")

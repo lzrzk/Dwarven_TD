@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dflou5bvory55" path="res://Assets/Assets_Enemies/Ужас тьмы.png" id="3_4aqa0"]
 
 [node name="dark_abomination" instance=ExtResource("1_dxj2e")]
-hp = 40.0
-maxHp = 40.0
-speed = 80
+hp = 120.0
+maxHp = 120.0
+speed = 100
 spawnOnDeath = true
 spawnedOnDeath = ExtResource("2_em80o")
 shieldsPhysical = 1.0

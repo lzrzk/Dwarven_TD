@@ -7,7 +7,6 @@ class_name enemy
 @onready var type = "enemy"
 @export var fire_trough_ice:int
 @export var speed:int
-@export var spawnOnDeath:bool
 @export var spawnedOnDeath:PackedScene
 @export var shieldsPhysical:float
 @export var shieldsMagical:float
@@ -16,6 +15,8 @@ class_name enemy
 @export var pathFollow:PathFollow2D
 @export var oreGiven:int
 @export var speed_decreased = false
+@export var permafrost = false
+
 func _ready() -> void:
 	fire_trough_ice == 0
 	self.pathFollow=PathFollow2D.new()
@@ -40,15 +41,20 @@ func _process(delta: float) -> void:
 
 
 
-func hit(magical_dmg, physical_dmg, true_dmg) -> void:
+func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg,) -> void:
+	print(fire_trough_ice)
 	
 	var magDmgTrue = magical_dmg * shieldsMagical
 	var physDmgTrue = physical_dmg * shieldsPhysical
 	var incomingDmg = physDmgTrue + magDmgTrue + true_dmg
+	self.fire_trough_ice +=  fire_trough_ice
 	self.hp -= incomingDmg
-	if hp <= 0:
-		if spawnOnDeath == true:
-			pass
+	if self.hp <= 0:
+		if self.spawnedOnDeath != null:
+			print("eevee")
+			var spawnedOnDeathUnpacked = self.spawnedOnDeath
+			spawnedOnDeathUnpacked.position = self.position
+			$"../".add_child(spawnedOnDeathUnpacked)
 			
 			
 		Variables.ore += oreGiven
@@ -70,6 +76,9 @@ func _on_fire_frost_timer_timeout() -> void:
 		self.hp -= self.fire_trough_ice
 		self.fire_trough_ice -= 1
 	elif self.fire_trough_ice < 0:
+		if self.fire_trough_ice < 20 and permafrost:
+			self.speed *= 0.9
+			var permafrost = true
 		self.speed /= 2
 		self.fire_trough_ice +=1
 		self.speed_decreased = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfu7afumxagfr"
-path="res://.godot/imported/мега кристал.png-a7cafa9e18b2998dbc6b11e4269d6060.ctex"
+uid="uid://basdwek21h2sb"
+path="res://.godot/imported/иконка улучшения огненый кристал.png-ce0ecfef238118fdca2608ec6c47287b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets_road/мега кристал.png"
-dest_files=["res://.godot/imported/мега кристал.png-a7cafa9e18b2998dbc6b11e4269d6060.ctex"]
+source_file="res://Assets/Assets_towers/иконка улучшения огненый кристал.png"
+dest_files=["res://.godot/imported/иконка улучшения огненый кристал.png-ce0ecfef238118fdca2608ec6c47287b.ctex"]
 
 [params]
 

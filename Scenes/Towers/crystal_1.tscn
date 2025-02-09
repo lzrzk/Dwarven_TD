@@ -10,7 +10,7 @@
 
 [node name="Crystal_1" instance=ExtResource("1_2xqvd")]
 script = ExtResource("2_h5qax")
-price = 100
+price = 150
 range = 15
 magical_dmg = 1.0
 attack_speeds = 0.5

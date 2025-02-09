@@ -24,14 +24,17 @@ func shoot():
 	
 	match self.target:
 		"first":
-			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,0)
+			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,self.fire_trough_ice,0)
 		_:
 			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,0)
 			print("insuficient target")
 		"tri-shot":
-			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,3)
-			self.enemiesInRange[1].hit(self.physical_dmg/2,self.magical_dmg/2,)
-			self.enemiesInRange[2].hit(self.physical_dmg/3,self.magical_dmg/3,)
+			self.enemiesInRange[0].hit(self.physical_dmg,self.fire_trough_ice,self.magical_dmg,0)
+			self.enemiesInRange[1].hit(self.physical_dmg/2,self.fire_trough_ice,self.magical_dmg/2,0)
+			self.enemiesInRange[2].hit(self.physical_dmg/3,self.fire_trough_ice,self.magical_dmg/3,0)
+		"piercing":
+			self.enemiesInRange[0].hit(self.physical_dmg/2,self.magical_dmg/2,self.fire_trough_ice,self.magical_dmg/2 + self.physical_dmg/2)
+			
 
 
 
@@ -73,7 +76,13 @@ func _on_upgrade_button_pressed() -> void:
 		Variables.ore-=self.price
 		queue_free()
 
-
+func _on_upgrade_button_2_pressed() -> void:
+	var up_tower= self.upgraded_tower2.instantiate()
+	up_tower.position = self.position
+	if Variables.ore >= self.price:
+		$"../".add_child(up_tower)
+		Variables.ore-=self.price
+		queue_free()
 func _on_activate_button_mouse_entered() -> void:
 	$Polygon2D.visible = true
 

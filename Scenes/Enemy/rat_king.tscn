@@ -5,8 +5,8 @@
 
 [node name="Rat_King" instance=ExtResource("1_66y7l")]
 z_index = 2
-hp = 100.0
-maxHp = 100.0
+hp = 1000.0
+maxHp = 1000.0
 speed = 50
 shieldsPhysical = 0.9
 shieldsMagical = 0.8

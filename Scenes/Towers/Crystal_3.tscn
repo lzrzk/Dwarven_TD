@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0fxr8a1jedy7"]
+[gd_scene load_steps=8 format=3 uid="uid://b0fxr8a1jedy7"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_h05nx"]
-[ext_resource type="Script" path="res://Scenes/Towers/crystal_3.gd" id="2_4v30w"]
+[ext_resource type="Script" path="res://Scenes/Towers/crystal_1.gd" id="2_evluy"]
 [ext_resource type="Texture2D" uid="uid://bilyx7j5n2qcm" path="res://Assets/Assets_towers/Кристал_база_3.png" id="3_2dbd4"]
 [ext_resource type="PackedScene" uid="uid://bvokdnh75k0f7" path="res://Scenes/Towers/fire_crystal_1.tscn" id="3_2ykao"]
 [ext_resource type="PackedScene" uid="uid://bhun4qropyu0p" path="res://Scenes/Towers/ice_crystal_1.tscn" id="4_juird"]
+[ext_resource type="Texture2D" uid="uid://basdwek21h2sb" path="res://Assets/Assets_towers/иконка улучшения огненый кристал.png" id="6_t1o0n"]
+[ext_resource type="Texture2D" uid="uid://dah51cufa3l2o" path="res://Assets/Assets_towers/иконка улучшения ледяной кристал.png" id="7_21poo"]
 
 [node name="Crystal_3" instance=ExtResource("1_h05nx")]
-script = ExtResource("2_4v30w")
-price = 200
+script = ExtResource("2_evluy")
+price = 150
 range = 20
 magical_dmg = 4.0
 attack_speeds = 0.4
@@ -31,6 +33,7 @@ offset_left = 32.0
 offset_top = -96.0
 offset_right = 104.0
 offset_bottom = -24.0
+icon = ExtResource("6_t1o0n")
 icon_alignment = 1
 
 [node name="UpgradeButton2" parent="." index="7"]
@@ -38,3 +41,4 @@ offset_left = -96.0
 offset_top = -96.0
 offset_right = -24.0
 offset_bottom = -24.0
+icon = ExtResource("7_21poo")

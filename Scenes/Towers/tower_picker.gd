@@ -1,7 +1,7 @@
 extends Node2D
 var crystal_scene = preload("res://Scenes/Towers/crystal_1.tscn")
 var ballista_scene = preload("res://Scenes/Towers/ballista_1.tscn")
-
+var statue_scene = preload("res://Scenes/Towers/statue_1.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -37,7 +37,12 @@ func _on_ballista_button_pressed() -> void:
 
 
 func _on_statue_button_pressed() -> void:
-	pass
+	var statue=statue_scene.instantiate()
+	statue.position = self.position
+	if Variables.ore >= 100:
+		%towers.add_child(statue)
+		Variables.ore-= 100
+		queue_free()
 
 
 func _on_back_button_pressed() -> void:

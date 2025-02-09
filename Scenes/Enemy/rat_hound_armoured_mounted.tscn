@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg3ynuxl7pilt"]
+
+[ext_resource type="PackedScene" uid="uid://bg8pjsf8mmsl3" path="res://Scenes/Enemy/enemy.tscn" id="1_bvqjg"]
+[ext_resource type="PackedScene" uid="uid://c4nwiaixu3kj8" path="res://Scenes/Enemy/rat_hound_armoured.tscn" id="2_eib51"]
+
+[node name="rat_hound_armoured_mounted" instance=ExtResource("1_bvqjg")]
+hp = 30.0
+maxHp = 30.0
+speed = 150
+spawnedOnDeath = ExtResource("2_eib51")
+shieldsPhysical = 0.7
+shieldsMagical = 0.9
+damage = 4
+oreGiven = 15
