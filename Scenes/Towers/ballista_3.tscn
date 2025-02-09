@@ -6,6 +6,11 @@
 
 [node name="Ballista_3" instance=ExtResource("1_gq0ga")]
 script = ExtResource("2_gb6o4")
+price = 150
+range = 22
+physical_dmg = 15.0
+attack_speeds = 1.5
+target = "first"
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_fuemn")
