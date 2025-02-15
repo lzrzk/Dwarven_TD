@@ -11,6 +11,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_ad1fq")
 
 [node name="ExpirationTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -19,3 +20,5 @@ texture = ExtResource("2_40sug")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_prank")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

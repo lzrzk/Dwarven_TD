@@ -9,6 +9,7 @@ func shoot():
 		"first":
 			var magic_arr = magic_arr_scene.instantiate()
 			magic_arr.enemy = self.enemiesInRange[0]
+			magic_arr.setDmg(physical_dmg,magical_dmg,fire_trough_ice)
 			add_child(magic_arr)
 			
 		_:

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3kpj4sn31at3"]
+[gd_scene load_steps=4 format=3 uid="uid://b3kpj4sn31at3"]
 
 [ext_resource type="Script" path="res://Scenes/bullets/magic_strike.gd" id="1_ui85l"]
 [ext_resource type="Texture2D" uid="uid://tck84kfy2svv" path="res://Assets/Assets_towers/Взрыв_кристал.png" id="2_1tg4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxyrd"]
+size = Vector2(8, 8)
 
 [node name="MagicStrike" type="Area2D"]
 scale = Vector2(2, 2)
@@ -12,3 +15,9 @@ script = ExtResource("1_ui85l")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("2_1tg4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dxyrd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="ExpirationTimer" to="." method="_on_expiration_timer_timeout"]

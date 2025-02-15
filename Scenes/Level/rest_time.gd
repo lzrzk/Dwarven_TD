@@ -25,4 +25,3 @@ func _on_mega_crystal_button_pressed() -> void:
 	if Variables.ore >= 750:
 		Variables.ore -= 750
 		action_count -= 1
-		$"../towers/Mega_crystal".visibility = true

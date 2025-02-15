@@ -7,6 +7,7 @@ class_name enemy
 @onready var type = "enemy"
 @export var fire_trough_ice:int
 @export var speed:int
+@export var canSpawnOnDeath:bool = false
 @export var spawnedOnDeath:PackedScene
 @export var shieldsPhysical:float
 @export var shieldsMagical:float
@@ -50,9 +51,9 @@ func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg,) -> void:
 	self.fire_trough_ice +=  fire_trough_ice
 	self.hp -= incomingDmg
 	if self.hp <= 0:
-		if self.spawnedOnDeath != null:
+		if self.canSpawnOnDeath:
 			print("eevee")
-			var spawnedOnDeathUnpacked = self.spawnedOnDeath
+			var spawnedOnDeathUnpacked = self.spawnedOnDeath.instantiate()
 			spawnedOnDeathUnpacked.position = self.position
 			$"../".add_child(spawnedOnDeathUnpacked)
 			
@@ -71,14 +72,15 @@ func _on_fire_frost_timer_timeout() -> void:
 	if self.speed_decreased:
 		self.speed *= 2
 	if self.fire_trough_ice == 0:
+		$Sprite2D.modulate = Color("#ffffff")
 		pass
 	elif self.fire_trough_ice > 0:
+		$Sprite2D.modulate = Color("#ff8080")
 		self.hp -= self.fire_trough_ice
 		self.fire_trough_ice -= 1
 	elif self.fire_trough_ice < 0:
+		$Sprite2D.modulate = Color("#5784ff")
 		if self.fire_trough_ice < 20 and permafrost:
+			$Sprite2D.modulate = Color("#0e19e8")
 			self.speed *= 0.9
-			var permafrost = true
-		self.speed /= 2
-		self.fire_trough_ice +=1
-		self.speed_decreased = true
+			var permafrost

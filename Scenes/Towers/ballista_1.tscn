@@ -7,10 +7,10 @@
 
 [node name="ballista_1" instance=ExtResource("1_546ws")]
 script = ExtResource("2_wdpgs")
-price = 100
+price = 150
 range = 16
-physical_dmg = 8.0
-attack_speeds = 2.0
+physical_dmg = 10.0
+attack_speeds = 1.8
 target = "first"
 upgraded_tower = ExtResource("3_cknb8")
 

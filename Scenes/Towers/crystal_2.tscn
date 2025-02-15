@@ -9,7 +9,7 @@
 script = ExtResource("2_v563w")
 price = 200
 range = 19
-magical_dmg = 2.0
+magical_dmg = 5.0
 attack_speeds = 0.4
 target = "first"
 upgraded_tower = ExtResource("3_y5fc8")

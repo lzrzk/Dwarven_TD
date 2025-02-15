@@ -7,9 +7,9 @@
 [node name="Fire_crystal_1" instance=ExtResource("1_o4t2b")]
 script = ExtResource("2_36d8f")
 price = 200
-fire_trough_ice = 4
+fire_trough_ice = 2
 range = 20
-magical_dmg = 5.0
+magical_dmg = 6.0
 attack_speeds = 0.4
 target = "first"
 

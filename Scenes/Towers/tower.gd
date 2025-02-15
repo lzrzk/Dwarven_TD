@@ -41,10 +41,10 @@ func shoot():
 func _on_activate_button_pressed() -> void:
 	$ActivateButton.visible = false
 	$BackButton.visible = true
-	if upgraded_tower != null or upgraded_tower2 !=null:
+	if upgraded_tower != null:
 		$UpgradeButton.visible = true
 	Variables.selectedNode = self
-	if upgraded_tower != upgraded_tower2:
+	if upgraded_tower2 != null:
 		$UpgradeButton2.visible = true
 
 func _on_back_button_pressed() -> void:
@@ -57,9 +57,9 @@ func _ready() -> void:
 	var range_shape = CircleShape2D.new()
 	range_shape.radius = self.range * 10   #ConversionRate
 	$Attack_range/CollisionShape2D.shape = range_shape
-	if upgraded_tower2 == null:
-		upgraded_tower2 =  upgraded_tower
-	
+
+
+
 func _on_attack_range_body_exited(body: Node2D) -> void:
 	if body.type == "enemy":
 		self.enemiesInRange.erase(body)
