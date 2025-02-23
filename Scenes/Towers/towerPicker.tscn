@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwcfvm81lh4hr"]
+[gd_scene load_steps=7 format=3 uid="uid://cwcfvm81lh4hr"]
 
 [ext_resource type="Script" path="res://Scenes/Towers/tower_picker.gd" id="1_3g165"]
 [ext_resource type="Texture2D" uid="uid://cyc7lktwdjeg7" path="res://Assets/Assets_towers/Пустое_место_иконка.png" id="2_3542m"]
 [ext_resource type="Texture2D" uid="uid://bqbic4hi7ceem" path="res://Assets/Assets_towers/иконка_кристал.png" id="3_dkmul"]
 [ext_resource type="Texture2D" uid="uid://bv5nth4hudewl" path="res://Assets/Assets_towers/иконка балиста.png" id="4_egxuf"]
 [ext_resource type="Texture2D" uid="uid://mfjurv2sxdii" path="res://Assets/Assets_towers/иконка тмена 32х32.png" id="5_e0blk"]
+[ext_resource type="Texture2D" uid="uid://0wvjksfk6i3v" path="res://Assets/Assets_towers/иконка статуя.png" id="5_i7x2x"]
 
 [node name="TowerPicker" type="Node2D"]
 script = ExtResource("1_3g165")
@@ -22,8 +23,10 @@ mouse_default_cursor_shape = 2
 
 [node name="CrystalButton" type="Button" parent="."]
 visible = false
-offset_left = -32.0
-offset_bottom = 32.0
+offset_left = -29.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 33.0
 mouse_default_cursor_shape = 2
 icon = ExtResource("3_dkmul")
 flat = true
@@ -40,10 +43,13 @@ flat = true
 
 [node name="StatueButton" type="Button" parent="."]
 visible = false
-offset_left = -32.0
-offset_top = -32.0
+offset_left = -37.0
+offset_top = -35.0
+offset_right = 3.0
+offset_bottom = 5.0
 mouse_default_cursor_shape = 2
-text = "S"
+icon = ExtResource("5_i7x2x")
+flat = true
 
 [node name="BackButton" type="Button" parent="."]
 visible = false

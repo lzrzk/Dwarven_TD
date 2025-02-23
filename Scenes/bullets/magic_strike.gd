@@ -16,6 +16,8 @@ func _ready() -> void:
 	self.global_position = self.enemy.global_position
 	$ExpirationTimer.wait_time = randf_range(0.5,3)
 	$ExpirationTimer.start()
+	if fire_trough_ice < 0:
+		$Sprite2D.modulate = Color("#ff6666")
 
 
 func _on_body_entered(body: Node2D) -> void:

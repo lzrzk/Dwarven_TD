@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctsdd6stiim2s"]
+[gd_scene load_steps=8 format=3 uid="uid://ctsdd6stiim2s"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_gq0ga"]
 [ext_resource type="Script" path="res://Scenes/Towers/ballista_1.gd" id="2_gb6o4"]
+[ext_resource type="PackedScene" uid="uid://jx6iib17ond1" path="res://Scenes/Towers/ballista_heavy_1.tscn" id="3_aff08"]
 [ext_resource type="Texture2D" uid="uid://eongicoriat0" path="res://Assets/Assets_towers/балиста база 3.png" id="3_fuemn"]
+[ext_resource type="PackedScene" uid="uid://b38f4nmof33bn" path="res://Scenes/Towers/ballista_light_1.tscn" id="4_r6g1u"]
+[ext_resource type="Texture2D" uid="uid://fkdwwi5uvv4u" path="res://Assets/Assets_towers/Тяжелая балиста иконка.png" id="6_kxj4p"]
+[ext_resource type="Texture2D" uid="uid://ct7s620hcw02v" path="res://Assets/Assets_towers/иконка застрельшиков.png" id="7_ripo4"]
 
 [node name="Ballista_3" instance=ExtResource("1_gq0ga")]
 script = ExtResource("2_gb6o4")
@@ -11,6 +15,8 @@ range = 22
 physical_dmg = 20.0
 attack_speeds = 1.4
 target = "first"
+upgraded_tower = ExtResource("3_aff08")
+upgraded_tower2 = ExtResource("4_r6g1u")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_fuemn")
@@ -22,4 +28,15 @@ offset_right = 32.0
 offset_bottom = 96.0
 
 [node name="UpgradeButton" parent="." index="6"]
-offset_bottom = -32.0
+offset_left = 32.0
+offset_top = -96.0
+offset_right = 104.0
+offset_bottom = -18.0
+icon = ExtResource("6_kxj4p")
+
+[node name="UpgradeButton2" parent="." index="7"]
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -24.0
+offset_bottom = -24.0
+icon = ExtResource("7_ripo4")

@@ -22,3 +22,4 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_prank")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="ExpirationTimer" to="." method="_on_expiration_timer_timeout"]
