@@ -88,3 +88,8 @@ func _on_activate_button_mouse_entered() -> void:
 
 func _on_activate_button_mouse_exited() -> void:
 	$Polygon2D.visible = false
+
+
+func _on_sell_button_pressed() -> void:
+	var picker = "res://Scenes/Towers/towerPicker.tscn"
+	$"../".add_child(picker.instantiate())

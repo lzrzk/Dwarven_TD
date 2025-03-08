@@ -11,6 +11,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_ad1fq")
 
 [node name="ExpirationTimer" type="Timer" parent="."]
+wait_time = 5.0
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

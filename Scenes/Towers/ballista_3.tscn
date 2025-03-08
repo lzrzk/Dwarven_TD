@@ -19,6 +19,7 @@ upgraded_tower = ExtResource("3_aff08")
 upgraded_tower2 = ExtResource("4_r6g1u")
 
 [node name="Sprite2D" parent="." index="1"]
+scale = Vector2(2, 2)
 texture = ExtResource("3_fuemn")
 
 [node name="BackButton" parent="." index="5"]
