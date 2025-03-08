@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://1q71mi3al1as"]
+[gd_scene load_steps=39 format=3 uid="uid://1q71mi3al1as"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_yfd3r"]
 [ext_resource type="PackedScene" uid="uid://dks8w6lf84vv0" path="res://Scenes/Level/MobSpawner.tscn" id="2_tr7wq"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://mfjurv2sxdii" path="res://Assets/Assets_towers/иконка тмена 32х32.png" id="11_ftejx"]
 [ext_resource type="Texture2D" uid="uid://cll0uohymrygl" path="res://Assets/Assets_road/стена знамя 1.png" id="13_7e3no"]
 [ext_resource type="Script" path="res://Scenes/Level/rest_time.gd" id="17_u6nge"]
+[ext_resource type="Script" path="res://Scenes/Level/dialogue_label.gd" id="20_mtfho"]
 [ext_resource type="Theme" uid="uid://dmu2g6xloo11o" path="res://Scenes/Styles/Dwarven_theme.tres" id="21_fkbvw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nyw3"]
@@ -210,11 +211,21 @@ offset_top = 27.0
 offset_right = 43.0
 offset_bottom = 50.0
 
+[node name="DialogueLabel" type="Label" parent="."]
+visible = false
+offset_left = 163.0
+offset_top = 480.0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("20_mtfho")
+
+[node name="SpeakerSprite2D" type="Sprite2D" parent="."]
+visible = false
+
 [node name="Window" type="Window" parent="."]
 auto_translate_mode = 1
 initial_position = 2
 size = Vector2i(1000, 500)
-visible = false
 borderless = true
 script = ExtResource("17_u6nge")
 
@@ -265,6 +276,7 @@ offset_bottom = 8.0
 
 [connection signal="endwave" from="MobSpawner" to="." method="_on_mob_spawner_endwave"]
 [connection signal="pressed" from="HideInfoButton" to="DataPadLabel" method="_on_hide_info_button_pressed"]
+[connection signal="visibility_changed" from="DialogueLabel" to="DialogueLabel" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Window" to="Window" method="_on_visibility_changed"]
 [connection signal="pressed" from="Window/digUpgradeButton" to="Window" method="_on_dig_upgrade_button_pressed"]
 [connection signal="pressed" from="Window/oreButton" to="Window" method="_on_ore_button_pressed"]

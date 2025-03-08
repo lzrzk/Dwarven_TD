@@ -20,4 +20,20 @@ func _ready() -> void:
 	pass
 
 func _on_visibility_changed() -> void:
-	pass # Replace with function body.
+	var text_type = randi_range(1,7)
+	if text_type == 7:
+		var text_subtype = randi_range(1,7)
+		if text_subtype == 1:
+			text = rare_text_1
+		if text_subtype == 2:
+			text = rare_text_2
+		if text_subtype == 3:
+			text = rare_text_3
+		if text_subtype == 4:
+			text = rare_text_4
+		if text_subtype == 5:
+			text = rare_text_5
+		if text_subtype == 6:
+			text = rare_text_1
+		if text_subtype == 7:
+			text = rare_text_7
