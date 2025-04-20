@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkl3l4nwl0iea"]
 
-[ext_resource type="Script" path="res://Scenes/Towers/mega_crystal.gd" id="1_lwqig"]
+[ext_resource type="Script" path="res://Scenes/Towers/crystal_1.gd" id="1_ontkw"]
 [ext_resource type="Texture2D" uid="uid://btqdvahpc4aa0" path="res://Assets/Assets_towers/мега кристал.png" id="2_0km51"]
 [ext_resource type="Script" path="res://Scenes/Towers/polygon_2d.gd" id="3_b7gl0"]
 [ext_resource type="Texture2D" uid="uid://cptgwxenvpj4r" path="res://Assets/Assets_towers/отмена_большая.png" id="4_bsbib"]
@@ -9,8 +9,8 @@
 radius = 260.325
 
 [node name="Mega_crystal" type="Node2D"]
-script = ExtResource("1_lwqig")
-range = 250
+script = ExtResource("1_ontkw")
+range = 25
 physical_dmg = 2.0
 magical_dmg = 8.0
 attack_speeds = 0.2
@@ -51,6 +51,20 @@ offset_right = 34.0
 offset_bottom = 37.0
 icon = ExtResource("4_bsbib")
 flat = true
+
+[node name="UpgradeButton" type="Button" parent="."]
+visible = false
+offset_left = 341.0
+offset_top = -276.0
+offset_right = 349.0
+offset_bottom = -268.0
+
+[node name="UpgradeButton2" type="Button" parent="."]
+visible = false
+offset_left = -278.0
+offset_top = -296.0
+offset_right = -166.0
+offset_bottom = -288.0
 
 [connection signal="timeout" from="attackTimer" to="." method="shoot"]
 [connection signal="area_entered" from="Attack_range" to="." method="_on_attack_range_area_entered"]

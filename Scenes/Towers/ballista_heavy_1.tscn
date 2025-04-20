@@ -8,7 +8,7 @@
 script = ExtResource("2_g0una")
 price = 200
 range = 25
-physical_dmg = 50.0
+physical_dmg = 100.0
 attack_speeds = 3.0
 target = "first"
 

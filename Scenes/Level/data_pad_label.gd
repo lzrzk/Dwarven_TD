@@ -51,7 +51,7 @@ func enemyInfo() -> String:
 		spd = "⬛⬛⬜"
 	elif Variables.selectedNode.speed > 299:
 		spd = "⬛⬛⬛"
-	var text = "DEF: {m_def} {p_def} SPD: {spd} HP: {hp}".format({"m_def":m_def,"p_def":p_def,"spd":spd,"hp":Variables.selectedNode.hp})
+	var text = "DEF: {m_def} {p_def} SPD: {spd} HP: {hp}".format({"m_def":m_def,"p_def":p_def,"spd":spd,"hp":round(Variables.selectedNode.hp)})
 
 	return text
 

@@ -8,7 +8,7 @@
 script = ExtResource("2_j02xx")
 price = 200
 range = 23
-physical_dmg = 5.0
+physical_dmg = 2.0
 attack_speeds = 0.1
 target = "first"
 

@@ -8,9 +8,9 @@
 script = ExtResource("2_8mtpt")
 price = 200
 range = 20
-physical_dmg = 5.0
-magical_dmg = 6.0
-attack_speeds = 0.8
+physical_dmg = 4.0
+magical_dmg = 5.0
+attack_speeds = 1.0
 target = "first"
 
 [node name="Sprite2D" parent="." index="1"]

@@ -9,9 +9,9 @@
 script = ExtResource("2_ll17c")
 price = 150
 range = 18
-physical_dmg = 3.0
-magical_dmg = 3.0
-attack_speeds = 1.0
+physical_dmg = 2.0
+magical_dmg = 2.0
+attack_speeds = 1.3
 target = "first"
 upgraded_tower = ExtResource("3_85hxe")
 

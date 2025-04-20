@@ -7,21 +7,19 @@ var worried_text_2 = "Gate is severly damaged. I hope we'll stop them this time.
 var worried_text_3 = "The vineyards aren't going to help. Its just us."
 var rare_text_1 = "Rock and stone to the bone."
 var rare_text_2 = "Wait those rodents aren't paying taxes... So IRS should be here soon."
-var rare_text_3 = "So is it Moria or Underdark maybe Hoxes...  Anyway anything is better than Skaven."
-var rare_text_4 = "So I should defend towers is it some kind of Dwarven™: Tower Defense."
+var rare_text_3 = "So is it Moria or Underdark maybe Hoxes...  Anyway anything is better than Skaven... Ohh wait rats"
+var rare_text_4 = "So I should defend dwarfs with towers is it some kind of Dwarven™: Tower Defense."
 var rare_text_5 = "Die xeno-scum or for super-earth... Oh right for Karl."
-var rare_text_6_1 = "..."
-var rare_text_6_2 = "..."
-var rare_text_6_3 = "You know I'm not obliged to speak"
+var rare_text_6 = "You know I'm not obliged to speak"
 var rare_text_7 = "The rose sounds windy today. Am I hearing some kind of Wind Rose."
-
+var rare_text_8 = "Anahilation prot"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
 func _on_visibility_changed() -> void:
-	var text_type = randi_range(1,7)
-	if text_type == 7:
+	var text_type = randi_range(1,10)
+	if text_type == 10:
 		var text_subtype = randi_range(1,7)
 		if text_subtype == 1:
 			text = rare_text_1

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dax4nh6fqv8ij" path="res://Assets/Assets_towers/Мега баллиста.png" id="2_1plnk"]
 
 [node name="Mega_ballista" instance=ExtResource("1_34i37")]
-range = 250
+range = 25
 physical_dmg = 40.0
 magical_dmg = 5.0
 attack_speeds = 5.0

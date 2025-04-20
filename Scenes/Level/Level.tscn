@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://1q71mi3al1as"]
+[gd_scene load_steps=41 format=3 uid="uid://1q71mi3al1as"]
 
 [ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_yfd3r"]
 [ext_resource type="PackedScene" uid="uid://dks8w6lf84vv0" path="res://Scenes/Level/MobSpawner.tscn" id="2_tr7wq"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://mfjurv2sxdii" path="res://Assets/Assets_towers/иконка тмена 32х32.png" id="11_ftejx"]
 [ext_resource type="Texture2D" uid="uid://cll0uohymrygl" path="res://Assets/Assets_road/стена знамя 1.png" id="13_7e3no"]
 [ext_resource type="Script" path="res://Scenes/Level/rest_time.gd" id="17_u6nge"]
+[ext_resource type="PackedScene" uid="uid://dkl3l4nwl0iea" path="res://Scenes/Towers/mega_crystal.tscn" id="18_fb6yi"]
+[ext_resource type="PackedScene" uid="uid://b3f52t3omal50" path="res://Scenes/Towers/mega_ballista.tscn" id="19_t5ol5"]
 [ext_resource type="Script" path="res://Scenes/Level/dialogue_label.gd" id="20_mtfho"]
 [ext_resource type="Theme" uid="uid://dmu2g6xloo11o" path="res://Scenes/Styles/Dwarven_theme.tres" id="21_fkbvw"]
 
@@ -112,9 +114,9 @@ sources/13 = SubResource("TileSetAtlasSource_whcao")
 
 [sub_resource type="Curve2D" id="Curve2D_gnm0b"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -32, 480, 0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 1056, 416, 0, 0, 0, 0, 1120, 416, 0, 0, 0, 0, 1120, 224, 0, 0, 0, 0, 32, 224, 0, 0, 0, 0, 32, 96, 0, 0, 0, 0, 152.709, 100.995, 0, 0, 0, 0, 992, 96, 0, 0, 0, 0, 988, -135)
+"points": PackedVector2Array(0, 0, 0, 0, -32, 480, 0, 0, 0, 0, 1056, 480, 0, 0, 0, 0, 1056, 416, 0, 0, 0, 0, 1120, 416, 0, 0, 0, 0, 1120, 224, 0, 0, 0, 0, 32, 224, 0, 0, 0, 0, 32, 96, 0, 0, 0, 0, 992, 96, 0, 0, 0, 0, 988, -135)
 }
-point_count = 10
+point_count = 9
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_yfd3r")
@@ -122,10 +124,10 @@ script = ExtResource("1_yfd3r")
 [node name="MobSpawner" parent="." instance=ExtResource("2_tr7wq")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -96.0
-offset_top = -32.0
-offset_right = 2644.0
-offset_bottom = 1316.0
+offset_left = -86.0
+offset_top = -36.0
+offset_right = 2654.0
+offset_bottom = 1312.0
 pivot_offset = Vector2(832, 64)
 color = Color(0.333333, 0.333333, 0.333333, 1)
 
@@ -169,15 +171,22 @@ position = Vector2(1056, 96)
 [node name="TowerPicker8" parent="towers" instance=ExtResource("8_7mxip")]
 position = Vector2(352, 416)
 
-[node name="TowerPicker9" parent="towers" instance=ExtResource("8_7mxip")]
-position = Vector2(1408, 832)
-
 [node name="TowerPicker10" parent="towers" instance=ExtResource("8_7mxip")]
 position = Vector2(544, 544)
+
+[node name="Mega_crystal" parent="towers" instance=ExtResource("18_fb6yi")]
+visible = false
+position = Vector2(736, 32)
+
+[node name="Mega_ballista" parent="towers" instance=ExtResource("19_t5ol5")]
+visible = false
+position = Vector2(480, 32)
+scale = Vector2(0.5, 0.5)
 
 [node name="OreLabel" type="Label" parent="."]
 offset_right = 96.0
 offset_bottom = 32.0
+theme = ExtResource("21_fkbvw")
 text = "Ore:"
 clip_text = true
 
@@ -187,6 +196,7 @@ offset_left = 59.0
 offset_top = 608.0
 offset_right = 1120.0
 offset_bottom = 649.0
+theme = ExtResource("21_fkbvw")
 text = "
 "
 script = ExtResource("10_lmt4c")
@@ -204,12 +214,14 @@ flat = true
 offset_left = 110.0
 offset_right = 177.0
 offset_bottom = 23.0
+theme = ExtResource("21_fkbvw")
 
 [node name="WaveLabel" type="Label" parent="."]
 offset_left = 3.0
 offset_top = 27.0
 offset_right = 43.0
 offset_bottom = 50.0
+theme = ExtResource("21_fkbvw")
 
 [node name="DialogueLabel" type="Label" parent="."]
 visible = false
@@ -273,6 +285,11 @@ text = "Repair wall vineyard 750"
 [node name="megaBallistaButton" type="Button" parent="Window"]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="ActionCountLabel" type="Label" parent="Window"]
+offset_right = 48.0
+offset_bottom = 23.0
+theme = ExtResource("21_fkbvw")
 
 [connection signal="endwave" from="MobSpawner" to="." method="_on_mob_spawner_endwave"]
 [connection signal="pressed" from="HideInfoButton" to="DataPadLabel" method="_on_hide_info_button_pressed"]

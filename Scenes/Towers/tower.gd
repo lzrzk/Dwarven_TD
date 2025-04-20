@@ -26,7 +26,7 @@ func shoot():
 		"first":
 			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,self.fire_trough_ice,0)
 		_:
-			self.enemiesInRange[0].hit(self.physical_dmg,self.magical_dmg,0)
+			self.enemiesInRange[0].hit(self.physical_dmg,0,self.magical_dmg,0)
 			print("insuficient target")
 		"tri-shot":
 			self.enemiesInRange[0].hit(self.physical_dmg,self.fire_trough_ice,self.magical_dmg,0)
