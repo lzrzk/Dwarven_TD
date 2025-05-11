@@ -41,6 +41,7 @@ func shoot():
 func _on_activate_button_pressed() -> void:
 	$ActivateButton.visible = false
 	$BackButton.visible = true
+	$SellButton.visible = true
 	if upgraded_tower != null:
 		$UpgradeButton.visible = true
 	Variables.selectedNode = self
@@ -52,7 +53,7 @@ func _on_back_button_pressed() -> void:
 	$BackButton.visible = false
 	$UpgradeButton.visible = false
 	$UpgradeButton2.visible = false
-
+	$SellButton.visible = false
 func _ready() -> void:
 	var range_shape = CircleShape2D.new()
 	range_shape.radius = self.range * 10   #ConversionRate
@@ -91,5 +92,9 @@ func _on_activate_button_mouse_exited() -> void:
 
 
 func _on_sell_button_pressed() -> void:
-	var picker = "res://Scenes/Towers/towerPicker.tscn"
-	$"../".add_child(picker.instantiate())
+	Variables.ore += self.price/2
+	var picker = load("res://Scenes/Towers/towerPicker.tscn") as PackedScene
+	picker = picker.instantiate()
+	picker.global_position = self.global_position
+	add_sibling(picker)
+	queue_free()

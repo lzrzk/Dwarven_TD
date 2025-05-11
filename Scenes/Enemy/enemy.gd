@@ -20,7 +20,8 @@ class_name enemy
 
 func _ready() -> void:
 	fire_trough_ice == 0
-	self.pathFollow=PathFollow2D.new()
+	if not self.pathFollow:
+		self.pathFollow=PathFollow2D.new()
 	Variables.enemyPath.add_child(self.pathFollow)
 	
 
@@ -53,9 +54,13 @@ func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg,) -> void:
 	if self.hp <= 0:
 		if self.canSpawnOnDeath:
 			print("eevee")
-			var spawnedOnDeathUnpacked = self.spawnedOnDeath.instantiate()
-			spawnedOnDeathUnpacked.position = self.position
-			$"../".add_child(spawnedOnDeathUnpacked)
+			var spawnedOnDeathUnpacked = self.spawnedOnDeath.instantiate() as enemy
+			spawnedOnDeathUnpacked.fire_trough_ice = 0
+			spawnedOnDeathUnpacked.pathFollow=PathFollow2D.new()
+			Variables.enemyPath.add_child(spawnedOnDeathUnpacked.pathFollow)
+			spawnedOnDeathUnpacked.pathFollow.progress = self.pathFollow.progress
+			
+			Variables.enemies.add_child(spawnedOnDeathUnpacked)
 			
 			
 		Variables.ore += oreGiven

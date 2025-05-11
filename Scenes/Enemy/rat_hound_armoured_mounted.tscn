@@ -7,6 +7,7 @@
 hp = 30.0
 maxHp = 30.0
 speed = 150
+canSpawnOnDeath = true
 spawnedOnDeath = ExtResource("2_eib51")
 shieldsPhysical = 0.7
 shieldsMagical = 0.9

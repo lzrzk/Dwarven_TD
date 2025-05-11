@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 		$megaCrystalButton.visible = false
 	if action_count <= 0:
 		Variables.next_wave = true
-	$ActionCountLabel.text = "action_count:"  + str(action_count) + "/" + (permanent_action_count)
+	$ActionCountLabel.text = "action_count:"  + str(action_count) + "/" + str(permanent_action_count)
 
 
 func _on_dig_upgrade_button_pressed() -> void:

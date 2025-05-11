@@ -12,26 +12,6 @@ var rare_text_4 = "So I should defend dwarfs with towers is it some kind of Dwar
 var rare_text_5 = "Die xeno-scum or for super-earth... Oh right for Karl."
 var rare_text_6 = "You know I'm not obliged to speak"
 var rare_text_7 = "The rose sounds windy today. Am I hearing some kind of Wind Rose."
-var rare_text_8 = "Anahilation prot"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
-
-func _on_visibility_changed() -> void:
-	var text_type = randi_range(1,10)
-	if text_type == 10:
-		var text_subtype = randi_range(1,7)
-		if text_subtype == 1:
-			text = rare_text_1
-		if text_subtype == 2:
-			text = rare_text_2
-		if text_subtype == 3:
-			text = rare_text_3
-		if text_subtype == 4:
-			text = rare_text_4
-		if text_subtype == 5:
-			text = rare_text_5
-		if text_subtype == 6:
-			text = rare_text_1
-		if text_subtype == 7:
-			text = rare_text_7

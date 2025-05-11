@@ -66,6 +66,12 @@ offset_top = -296.0
 offset_right = -166.0
 offset_bottom = -288.0
 
+[node name="SellButton" type="Button" parent="."]
+visible = false
+offset_top = -180.0
+offset_right = 8.0
+offset_bottom = -172.0
+
 [connection signal="timeout" from="attackTimer" to="." method="shoot"]
 [connection signal="area_entered" from="Attack_range" to="." method="_on_attack_range_area_entered"]
 [connection signal="area_exited" from="Attack_range" to="." method="_on_attack_range_area_exited"]
