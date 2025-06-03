@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b432wkdh664h2"]
+[gd_scene load_steps=5 format=3 uid="uid://dhx4i5i65tcr"]
 
-[ext_resource type="Theme" uid="uid://dmu2g6xloo11o" path="res://Scenes/Styles/Dwarven_theme.tres" id="1_40uxc"]
-[ext_resource type="Script" path="res://Scenes/Level/dialogue_screen.gd" id="1_q0ada"]
-[ext_resource type="Texture2D" uid="uid://c5vxpfawrf3mt" path="res://Assets/Assets_Enemies/Dwurin_unmasked.png" id="2_gvrdb"]
-[ext_resource type="Texture2D" uid="uid://0jrydlf77ei1" path="res://Assets/Assets_Enemies/Rat_king_portrait.png" id="3_gjpat"]
+[ext_resource type="Script" path="res://defeat_screen.gd" id="1_tca34"]
+[ext_resource type="Theme" uid="uid://dmu2g6xloo11o" path="res://Scenes/Styles/Dwarven_theme.tres" id="2_hbvht"]
+[ext_resource type="Texture2D" uid="uid://c5vxpfawrf3mt" path="res://Assets/Assets_Enemies/Dwurin_unmasked.png" id="3_dfqiq"]
+[ext_resource type="Texture2D" uid="uid://dpm46g1vkwpbb" path="res://Assets/Assets_portraits/Archi_Dark.png" id="4_tnwfl"]
 
-[node name="DialogueScreen" type="Node2D"]
-script = ExtResource("1_q0ada")
+[node name="DefeatScreen" type="Node2D"]
+script = ExtResource("1_tca34")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -153.0
@@ -19,19 +19,18 @@ color = Color(0.389099, 0, 0.0448722, 1)
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_right = 1153.0
 offset_bottom = 352.0
-theme = ExtResource("1_40uxc")
+theme = ExtResource("2_hbvht")
 text = "Press any button to start"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(192, 504)
 scale = Vector2(9, 4.75)
-texture = ExtResource("2_gvrdb")
+texture = ExtResource("3_dfqiq")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(928, 512)
 scale = Vector2(8, 5)
-texture = ExtResource("3_gjpat")
-flip_h = true
+texture = ExtResource("4_tnwfl")
 
 [node name="StartButtonButton" type="Button" parent="."]
 visible = false
@@ -39,6 +38,6 @@ offset_left = 480.0
 offset_top = 480.0
 offset_right = 736.0
 offset_bottom = 608.0
-text = "Start Game"
+text = "Go to menu"
 
 [connection signal="pressed" from="StartButtonButton" to="." method="_on_start_button_button_pressed"]

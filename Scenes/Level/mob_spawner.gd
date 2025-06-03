@@ -36,14 +36,6 @@ func _ready() -> void:
 	rat hound armoured...12
 	rat on rat hound...13
 	rat on rat hound armoured...14
-	oathbreaker...15 to do
-	oathbreaker paladin...16 to do 
-	oathbreaker bannerlord...17 to do (MINIBOSS)
-	priest...18 to do 
-	monk...19 to do 
-	zealot...20 to do 
-	shadow wizard...21 to do (MINIBOSS)
-	evil shadow wizard...22 to do (BOSS)
 	'''
 	waves[0]= [[0,5]]
 	waves[1]= [[0,3],[0,7],[0,6],[0,4]]
@@ -73,9 +65,11 @@ func _process(delta: float) -> void:
 
 func startWave():
 	
-	wave = waves[Variables.waveNumber]
-	
-	$EnemyTimer.start(wave[0][1])
+	if Variables.waveNumber == 22:
+		pass
+	else:
+		wave = waves[Variables.waveNumber]
+		$EnemyTimer.start(wave[0][1])
 
 
 
@@ -88,7 +82,3 @@ func _on_enemy_timer_timeout() -> void:
 	else:
 		Variables.waveNumber+=1
 		endwave.emit()
-
-
-func _on_mega_crystal_button_pressed() -> void:
-	pass # Replace with function body.

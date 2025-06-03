@@ -34,6 +34,7 @@ func _on_mega_crystal_button_pressed() -> void:
 		action_count -= 1
 		crystal_bought = true
 		$"../towers/Mega_crystal".visible = true
+		Variables.victoryPoints += 1
 
 
 
@@ -42,3 +43,4 @@ func _on_mega_ballista_button_pressed() -> void:
 		Variables.ore -= 750
 		action_count -= 1
 		$"../towers/Mega_ballista".visible = true
+		Variables.victoryPoints += 1

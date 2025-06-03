@@ -11,8 +11,14 @@ func _process(delta: float) -> void:
 	$OreLabel.text = "Ore:" + str(Variables.ore)
 	$LivesLabel.text = "Lives" + str(Variables.lives)
 	if Variables.lives <= 0:
-		get_tree().change_scene_to_file("res://Scenes/Menu/Mainmenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Level/defeat_screen.tscn")
 	$WaveLabel.text = "Wave: " + str(Variables.waveNumber)
+	
+	if Variables.waveNumber == 22:
+		if Variables.victoryPoints > 2:
+			get_tree().change_scene_to_file("res://Scenes/Level/great_victory_screen.tscn")
+		else:
+			get_tree().change_scene_to_file("res://Scenes/Level/lesser_victory_screen.tscn")
 	
 	if len($enemies.get_children()) == 0 and endwave:
 		$Window.visible = true
