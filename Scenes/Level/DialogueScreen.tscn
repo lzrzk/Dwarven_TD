@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b432wkdh664h2"]
+[gd_scene load_steps=6 format=3 uid="uid://b432wkdh664h2"]
 
 [ext_resource type="Theme" uid="uid://dmu2g6xloo11o" path="res://Scenes/Styles/Dwarven_theme.tres" id="1_40uxc"]
 [ext_resource type="Script" path="res://Scenes/Level/dialogue_screen.gd" id="1_q0ada"]
 [ext_resource type="Texture2D" uid="uid://c5vxpfawrf3mt" path="res://Assets/Assets_Enemies/Dwurin_unmasked.png" id="2_gvrdb"]
 [ext_resource type="Texture2D" uid="uid://0jrydlf77ei1" path="res://Assets/Assets_Enemies/Rat_king_portrait.png" id="3_gjpat"]
+[ext_resource type="Texture2D" uid="uid://ddy1qjwovi11x" path="res://Assets/Assets_menu/Кнопка старт.png" id="5_2x1rr"]
 
 [node name="DialogueScreen" type="Node2D"]
 script = ExtResource("1_q0ada")
@@ -34,11 +35,12 @@ texture = ExtResource("3_gjpat")
 flip_h = true
 
 [node name="StartButtonButton" type="Button" parent="."]
-visible = false
 offset_left = 480.0
-offset_top = 480.0
-offset_right = 736.0
-offset_bottom = 608.0
-text = "Start Game"
+offset_top = 416.0
+offset_right = 616.0
+offset_bottom = 544.0
+scale = Vector2(2, 2)
+icon = ExtResource("5_2x1rr")
+flat = true
 
 [connection signal="pressed" from="StartButtonButton" to="." method="_on_start_button_button_pressed"]

@@ -1,14 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3f52t3omal50"]
+[gd_scene load_steps=4 format=3 uid="uid://b3f52t3omal50"]
 
 [ext_resource type="PackedScene" uid="uid://j148fhwv2l80" path="res://Scenes/Towers/tower.tscn" id="1_34i37"]
 [ext_resource type="Texture2D" uid="uid://dax4nh6fqv8ij" path="res://Assets/Assets_towers/Мега баллиста.png" id="2_1plnk"]
+[ext_resource type="Script" path="res://Scenes/Towers/ballista_1.gd" id="2_beusd"]
 
 [node name="Mega_ballista" instance=ExtResource("1_34i37")]
+script = ExtResource("2_beusd")
 range = 25
 physical_dmg = 40.0
 magical_dmg = 5.0
-attack_speeds = 5.0
-target = "tri-shot"
+attack_speeds = 0.3
+target = "trishot"
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_1plnk")
+
+[node name="ActivateButton" parent="." index="4"]
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = 61.0
+
+[node name="BackButton" parent="." index="5"]
+offset_left = -75.0
+offset_top = -68.0
+offset_right = -3.0
+offset_bottom = 4.0
+scale = Vector2(2, 2)
+
+[node name="UpgradeButton" parent="." index="6"]
+offset_left = 72.0
+offset_top = -302.0
+offset_right = 144.0
+offset_bottom = -230.0
+
+[node name="UpgradeButton2" parent="." index="7"]
+offset_left = 30.0
+offset_top = -181.0
+offset_right = 102.0
+offset_bottom = -109.0
+
+[node name="SellButton" parent="." index="8"]
+offset_left = -12.0
+offset_top = -362.0
+offset_right = 60.0
+offset_bottom = -290.0

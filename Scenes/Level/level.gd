@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	$WaveLabel.text = "Wave: " + str(Variables.waveNumber)
 	
 	if Variables.waveNumber == 22:
-		if Variables.victoryPoints > 2:
+		if Variables.victoryPoints == 2 and Variables.lives > 10:
 			get_tree().change_scene_to_file("res://Scenes/Level/great_victory_screen.tscn")
 		else:
 			get_tree().change_scene_to_file("res://Scenes/Level/lesser_victory_screen.tscn")

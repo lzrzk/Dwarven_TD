@@ -31,7 +31,7 @@ offset_bottom = 96.0
 offset_left = 32.0
 offset_top = -96.0
 offset_right = 104.0
-offset_bottom = -18.0
+offset_bottom = -24.0
 icon = ExtResource("6_kxj4p")
 
 [node name="UpgradeButton2" parent="." index="7"]
@@ -40,3 +40,9 @@ offset_top = -96.0
 offset_right = -24.0
 offset_bottom = -24.0
 icon = ExtResource("7_ripo4")
+
+[node name="SellButton" parent="." index="8"]
+offset_left = -96.0
+offset_top = 32.0
+offset_right = -24.0
+offset_bottom = 104.0

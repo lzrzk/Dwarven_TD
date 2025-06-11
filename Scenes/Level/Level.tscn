@@ -272,8 +272,12 @@ theme = ExtResource("21_fkbvw")
 text = "Repair wall vineyard 750"
 
 [node name="megaBallistaButton" type="Button" parent="Window"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 366.0
+offset_top = 349.0
+offset_right = 590.0
+offset_bottom = 380.0
+theme = ExtResource("21_fkbvw")
+text = "Repair wall fortication 750"
 
 [node name="ActionCountLabel" type="Label" parent="Window"]
 offset_right = 48.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3jumgssd3cv8"]
 
-[ext_resource type="Script" path="res://great_victory_screen.gd" id="1_xgd8c"]
+[ext_resource type="Script" path="res://Scenes/Level/great_victory_screen.gd" id="1_xgd8c"]
 [ext_resource type="Theme" uid="uid://dmu2g6xloo11o" path="res://Scenes/Styles/Dwarven_theme.tres" id="2_gci6n"]
 [ext_resource type="Texture2D" uid="uid://dpm46g1vkwpbb" path="res://Assets/Assets_portraits/Archi_Dark.png" id="3_2q66j"]
 [ext_resource type="Texture2D" uid="uid://c5vxpfawrf3mt" path="res://Assets/Assets_Enemies/Dwurin_unmasked.png" id="4_sulwl"]
@@ -38,6 +38,7 @@ offset_left = 480.0
 offset_top = 480.0
 offset_right = 736.0
 offset_bottom = 608.0
+theme = ExtResource("2_gci6n")
 text = "Go to menu"
 
 [connection signal="pressed" from="StartButtonButton" to="." method="_on_start_button_button_pressed"]

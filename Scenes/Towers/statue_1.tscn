@@ -17,3 +17,7 @@ upgraded_tower = ExtResource("3_85hxe")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_rb8t2")
+
+[node name="BackButton" parent="." index="5"]
+offset_right = 39.0
+offset_bottom = 108.0

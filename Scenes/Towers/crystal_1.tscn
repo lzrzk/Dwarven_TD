@@ -24,8 +24,8 @@ shape = SubResource("CircleShape2D_qvqav")
 [node name="BackButton" parent="." index="5"]
 offset_left = -32.0
 offset_top = 32.0
-offset_right = 32.0
-offset_bottom = 96.0
+offset_right = 40.0
+offset_bottom = 104.0
 
 [node name="UpgradeButton" parent="." index="6"]
 offset_left = -35.0
