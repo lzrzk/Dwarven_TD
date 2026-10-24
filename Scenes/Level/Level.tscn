@@ -123,10 +123,10 @@ script = ExtResource("1_yfd3r")
 [node name="MobSpawner" parent="." instance=ExtResource("2_tr7wq")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -86.0
-offset_top = -36.0
-offset_right = 2654.0
-offset_bottom = 1312.0
+offset_left = -47.0
+offset_top = -30.0
+offset_right = 2693.0
+offset_bottom = 1318.0
 pivot_offset = Vector2(832, 64)
 color = Color(0.333333, 0.333333, 0.333333, 1)
 

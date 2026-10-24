@@ -94,6 +94,7 @@ position = Vector2(588, 188)
 texture = ExtResource("13_vp64a")
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 offset_left = 400.0
 offset_top = 539.0
 offset_right = 799.0
@@ -103,5 +104,12 @@ theme_override_font_sizes/font_size = 64
 text = "Debug Mode"
 flat = true
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 43.0
+offset_top = 561.0
+offset_right = 138.0
+offset_bottom = 637.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
