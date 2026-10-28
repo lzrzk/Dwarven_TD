@@ -1,4 +1,8 @@
 extends Node
+
+class_name MobSpawner
+
+#region Scenes
 var rat_scene = load("res://Scenes/Enemy/Rat.tscn") as PackedScene
 var rat_light_scene = load("res://Scenes/Enemy/rat_light.tscn") as PackedScene
 var rat_knight_scene = load("res://Scenes/Enemy/rat_knight.tscn") as PackedScene
@@ -14,11 +18,11 @@ var rat_hound_scene = load("res://Scenes/Enemy/rat_hound.tscn") as PackedScene
 var rat_hound_armoured_scene = load("res://Scenes/Enemy/rat_hound_armoured.tscn") as PackedScene
 var rat_hound_mounted_scene = load("res://Scenes/Enemy/rat_hound_mounted.tscn") as PackedScene
 var rat_hound_armoured_mounted_scene = load("res://Scenes/Enemy/rat_hound_armoured_mounted.tscn") as PackedScene
+#endregion
 signal endwave
 var enemy_types = [rat_scene,rat_light_scene,rat_knight_scene,rat_king_scene,stone_golemite_scene,stone_golem_scene,crystal_golemite_scene,crystal_golem_scene,dark_spawn_scene,dark_abomination_scene,dark_broodmother,rat_hound_scene,rat_hound_armoured_scene,rat_hound_mounted_scene,rat_hound_armoured_mounted_scene]
-var wave:Array
 
-var waves:Dictionary = {}
+@export var waves:LevelWaves
 func _ready() -> void:
 	'''
 	rat...0
@@ -36,7 +40,7 @@ func _ready() -> void:
 	rat hound armoured...12
 	rat on rat hound...13
 	rat on rat hound armoured...14
-	'''
+	
 	waves[0]= [[0,5]]
 	waves[1]= [[0,3],[0,7],[0,6],[0,4]]
 	waves[2]= [[0,3],[0,7],[0,6],[8,4],[0,7],[0,7]]
@@ -59,26 +63,25 @@ func _ready() -> void:
 	waves[19]= [[7,5]]
 	waves[20]= [[9,1],[8,2],[9,3],[9,3],[8,1],[9,5],[9,1],[9,2],[8,3],[8,1]]
 	waves[21]= [[10,10]]
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func startWave():
 	
-	if Variables.waveNumber == 22:
-		pass
-	else:
-		wave = waves[Variables.waveNumber]
-		$EnemyTimer.start(wave[0][1])
-
-
-
+	'''
+	
+	
+func startWave():
+	if waves.is_next_wave_exist():
+		waves.next_wave()
+		waves.get_current_wave().next_enemy()
+		var wait_time = waves.get_current_wave().get_current_enemy_wait_time()
+		$EnemyTimer.start(wait_time)
 
 func _on_enemy_timer_timeout() -> void:
-	Variables.enemies.add_child(enemy_types[wave[0][0]].instantiate())
-	wave.pop_front()
-	if len(wave) > 0:
-		$EnemyTimer.start(wave[0][1])
+	var enemy_scene:PackedScene = waves.get_current_wave().get_current_enemy_scene()
+	Variables.enemies.add_child(enemy_scene.instantiate())
+	
+	if waves.get_current_wave().is_next_enemy_exist():
+		waves.get_current_wave().next_enemy()
+		
+		var wait_time = waves.get_current_wave().get_current_enemy_wait_time()
+		$EnemyTimer.start(wait_time)
 	else:
-		Variables.waveNumber+=1
 		endwave.emit()

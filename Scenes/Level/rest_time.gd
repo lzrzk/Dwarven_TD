@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	if ballista_bought == true:
 		$megaBallistaButton.visible = false
 	if action_count <= 0:
-		Variables.next_wave = true
+		Variables.is_rest_time_over = true
 	$ActionCountLabel.text = "action_count:"  + str(action_count) + "/" + str(permanent_action_count)
 
 

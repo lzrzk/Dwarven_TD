@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="LevelWaves" format=3 uid="uid://cw5tetntdicet"]
+
+[ext_resource type="Script" uid="uid://4jvv6rdtlpmb" path="res://Scenes/Resources/Wave/single_wave.gd" id="1_iyr4j"]
+[ext_resource type="Script" uid="uid://bm0gwgvuwq38u" path="res://Scenes/Resources/Wave/enemy_in_wave.gd" id="2_n5my1"]
+[ext_resource type="PackedScene" uid="uid://b3mffrofe6alu" path="res://Scenes/Enemy/Rat.tscn" id="3_m5a10"]
+[ext_resource type="Script" uid="uid://chhiwevyifanx" path="res://Scenes/Resources/Wave/LevelWaves.gd" id="4_n5my1"]
+
+[sub_resource type="Resource" id="Resource_pru3u"]
+script = ExtResource("2_n5my1")
+scene = ExtResource("3_m5a10")
+WaitTime = 5
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_0j2jn"]
+script = ExtResource("1_iyr4j")
+Enemies = Array[ExtResource("2_n5my1")]([SubResource("Resource_pru3u")])
+metadata/_custom_type_script = "uid://4jvv6rdtlpmb"
+
+[sub_resource type="Resource" id="Resource_n5my1"]
+script = ExtResource("2_n5my1")
+scene = ExtResource("3_m5a10")
+WaitTime = 3
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_m5a10"]
+script = ExtResource("2_n5my1")
+scene = ExtResource("3_m5a10")
+WaitTime = 7
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_rhnra"]
+script = ExtResource("2_n5my1")
+scene = ExtResource("3_m5a10")
+WaitTime = 6
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_ks1eb"]
+script = ExtResource("2_n5my1")
+scene = ExtResource("3_m5a10")
+WaitTime = 4
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_th1cc"]
+script = ExtResource("1_iyr4j")
+Enemies = Array[ExtResource("2_n5my1")]([SubResource("Resource_n5my1"), SubResource("Resource_m5a10"), SubResource("Resource_rhnra"), SubResource("Resource_ks1eb")])
+metadata/_custom_type_script = "uid://4jvv6rdtlpmb"
+
+[resource]
+script = ExtResource("4_n5my1")
+Waves = Array[ExtResource("1_iyr4j")]([SubResource("Resource_0j2jn"), SubResource("Resource_th1cc"), null])
+TotalTime = 0
+metadata/_custom_type_script = "uid://chhiwevyifanx"
