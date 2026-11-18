@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="LevelWaves" format=3 uid="uid://fvg128gblg75"]
+
+[ext_resource type="Script" uid="uid://4jvv6rdtlpmb" path="res://Scenes/Resources/Waves/single_wave.gd" id="1_mlkdc"]
+[ext_resource type="Script" uid="uid://bm0gwgvuwq38u" path="res://Scenes/Resources/Waves/enemy_in_wave.gd" id="2_edep1"]
+[ext_resource type="PackedScene" uid="uid://b3mffrofe6alu" path="res://Scenes/Enemy/Rat.tscn" id="3_edep1"]
+[ext_resource type="Script" uid="uid://chhiwevyifanx" path="res://Scenes/Resources/Waves/level_waves.gd" id="3_qku3e"]
+[ext_resource type="PackedScene" uid="uid://cbmg08ia0eby" path="res://Scenes/Enemy/rat_light.tscn" id="4_qku3e"]
+[ext_resource type="PackedScene" uid="uid://c6gvef7h3roa2" path="res://Scenes/Enemy/rat_knight.tscn" id="5_kh6is"]
+
+[sub_resource type="Resource" id="Resource_qku3e"]
+script = ExtResource("2_edep1")
+scene = ExtResource("3_edep1")
+WaitTime = 3.0
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_13ca3"]
+script = ExtResource("2_edep1")
+scene = ExtResource("3_edep1")
+WaitTime = 2.0
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_luor7"]
+script = ExtResource("2_edep1")
+scene = ExtResource("3_edep1")
+WaitTime = 1.5
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_kh6is"]
+script = ExtResource("1_mlkdc")
+Enemies = Array[ExtResource("2_edep1")]([SubResource("Resource_qku3e"), SubResource("Resource_13ca3"), SubResource("Resource_luor7")])
+metadata/_custom_type_script = "uid://4jvv6rdtlpmb"
+
+[sub_resource type="Resource" id="Resource_drg3f"]
+script = ExtResource("2_edep1")
+scene = ExtResource("3_edep1")
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_6j78c"]
+script = ExtResource("2_edep1")
+scene = ExtResource("4_qku3e")
+WaitTime = 3.0
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_se6tq"]
+script = ExtResource("2_edep1")
+scene = ExtResource("4_qku3e")
+WaitTime = 5.0
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_ah4uh"]
+script = ExtResource("2_edep1")
+scene = ExtResource("3_edep1")
+WaitTime = 0.5
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_6u51t"]
+script = ExtResource("1_mlkdc")
+Enemies = Array[ExtResource("2_edep1")]([SubResource("Resource_drg3f"), SubResource("Resource_6j78c"), SubResource("Resource_se6tq"), SubResource("Resource_ah4uh")])
+metadata/_custom_type_script = "uid://4jvv6rdtlpmb"
+
+[sub_resource type="Resource" id="Resource_875f3"]
+script = ExtResource("2_edep1")
+scene = ExtResource("5_kh6is")
+metadata/_custom_type_script = "uid://bm0gwgvuwq38u"
+
+[sub_resource type="Resource" id="Resource_xudgv"]
+script = ExtResource("1_mlkdc")
+Enemies = Array[ExtResource("2_edep1")]([SubResource("Resource_875f3")])
+metadata/_custom_type_script = "uid://4jvv6rdtlpmb"
+
+[resource]
+script = ExtResource("3_qku3e")
+Waves = Array[ExtResource("1_mlkdc")]([SubResource("Resource_kh6is"), SubResource("Resource_6u51t"), SubResource("Resource_xudgv")])
+TotalTime = 0
+metadata/_custom_type_script = "uid://chhiwevyifanx"

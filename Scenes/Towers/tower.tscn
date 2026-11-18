@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://j148fhwv2l80"]
+[gd_scene format=3 uid="uid://j148fhwv2l80"]
 
-[ext_resource type="Script" path="res://Scenes/Towers/tower.gd" id="1_0s22x"]
+[ext_resource type="Script" uid="uid://bojp2cg52g56x" path="res://Scenes/Towers/tower.gd" id="1_0s22x"]
 [ext_resource type="Texture2D" uid="uid://dag05kn6reqb4" path="res://Assets/Assets_towers/Кристал_база_1.png" id="2_xxfbv"]
-[ext_resource type="Script" path="res://Scenes/Towers/polygon_2d.gd" id="3_tub6i"]
+[ext_resource type="Script" uid="uid://dgo840ydgj6e2" path="res://Scenes/Towers/polygon_2d.gd" id="3_tub6i"]
 [ext_resource type="Texture2D" uid="uid://ceutvamf1tom0" path="res://Assets/Assets_towers/иконка_улучшение.png" id="4_f1qtk"]
 [ext_resource type="Texture2D" uid="uid://cptgwxenvpj4r" path="res://Assets/Assets_towers/отмена_большая.png" id="4_ombqm"]
 [ext_resource type="Texture2D" uid="uid://dvifsebhny4ei" path="res://Assets/Assets_towers/иконка продажа.png" id="6_yj87q"]
@@ -10,29 +10,30 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_863ce"]
 radius = 217.0
 
-[node name="Tower_Base" type="Node2D"]
+[node name="Tower_Base" type="Node2D" unique_id=1136996582]
 script = ExtResource("1_0s22x")
 
-[node name="attackTimer" type="Timer" parent="."]
+[node name="attackTimer" type="Timer" parent="." unique_id=1582666379]
 one_shot = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1797634257]
+texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_xxfbv")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2029574485]
 visible = false
 visibility_layer = 512
 z_index = 100
 script = ExtResource("3_tub6i")
 
-[node name="Attack_range" type="Area2D" parent="."]
+[node name="Attack_range" type="Area2D" parent="." unique_id=1966946652]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_range" unique_id=1017726651]
 shape = SubResource("CircleShape2D_863ce")
 debug_color = Color(0.92549, 0, 0.00784314, 0.14902)
 
-[node name="ActivateButton" type="Button" parent="."]
+[node name="ActivateButton" type="Button" parent="." unique_id=121619070]
 visibility_layer = 0
 offset_left = -32.0
 offset_top = -32.0
@@ -40,7 +41,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 mouse_default_cursor_shape = 2
 
-[node name="BackButton" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="." unique_id=684973475]
 visible = false
 z_index = 20
 offset_left = -33.0
@@ -50,7 +51,7 @@ offset_bottom = 151.0
 icon = ExtResource("4_ombqm")
 flat = true
 
-[node name="UpgradeButton" type="Button" parent="."]
+[node name="UpgradeButton" type="Button" parent="." unique_id=2054136348]
 visible = false
 z_index = 20
 offset_left = -36.0
@@ -61,7 +62,7 @@ mouse_default_cursor_shape = 2
 icon = ExtResource("4_f1qtk")
 flat = true
 
-[node name="UpgradeButton2" type="Button" parent="."]
+[node name="UpgradeButton2" type="Button" parent="." unique_id=1577926942]
 visible = false
 z_index = 20
 offset_left = -36.0
@@ -72,7 +73,7 @@ mouse_default_cursor_shape = 2
 icon = ExtResource("4_f1qtk")
 flat = true
 
-[node name="SellButton" type="Button" parent="."]
+[node name="SellButton" type="Button" parent="." unique_id=1619787135]
 visible = false
 offset_left = 32.0
 offset_top = -32.0

@@ -11,14 +11,14 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Level/DialogueScreen.tscn")
+func _on_button_pressed() -> void: # return DialogueScreen once appropriate functionality and art is implemented
+	get_tree().change_scene_to_file("res://Scenes/Level/Level.tscn")
 
 
 func _on_button_2_pressed() -> void:
 	Variables.ore += 2000000
 	get_tree().change_scene_to_file("res://Scenes/Level/Level.tscn")
 
-
+# add funcionality and art
 func _on_button_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menu/Achievment_screen.tscn")

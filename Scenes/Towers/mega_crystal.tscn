@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkl3l4nwl0iea"]
+[gd_scene format=3 uid="uid://dkl3l4nwl0iea"]
 
-[ext_resource type="Script" path="res://Scenes/Towers/crystal_1.gd" id="1_ontkw"]
+[ext_resource type="Script" uid="uid://bvuhe1jt5svok" path="res://Scenes/Towers/crystal_1.gd" id="1_ontkw"]
 [ext_resource type="Texture2D" uid="uid://btqdvahpc4aa0" path="res://Assets/Assets_towers/мега кристал.png" id="2_0km51"]
-[ext_resource type="Script" path="res://Scenes/Towers/polygon_2d.gd" id="3_b7gl0"]
+[ext_resource type="Script" uid="uid://dgo840ydgj6e2" path="res://Scenes/Towers/polygon_2d.gd" id="3_b7gl0"]
 [ext_resource type="Texture2D" uid="uid://cptgwxenvpj4r" path="res://Assets/Assets_towers/отмена_большая.png" id="4_bsbib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_863ce"]
 radius = 260.325
 
-[node name="Mega_crystal" type="Node2D"]
+[node name="Mega_crystal" type="Node2D" unique_id=1929717616]
 script = ExtResource("1_ontkw")
 range = 25
 physical_dmg = 2.0
@@ -16,25 +16,25 @@ magical_dmg = 8.0
 attack_speeds = 0.2
 target = "trishot"
 
-[node name="attackTimer" type="Timer" parent="."]
+[node name="attackTimer" type="Timer" parent="." unique_id=42954259]
 one_shot = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1838818483]
 texture = ExtResource("2_0km51")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2059400642]
 visible = false
 visibility_layer = 512
 z_index = 100
 script = ExtResource("3_b7gl0")
 
-[node name="Attack_range" type="Area2D" parent="."]
+[node name="Attack_range" type="Area2D" parent="." unique_id=392122546]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_range" unique_id=491505201]
 shape = SubResource("CircleShape2D_863ce")
 debug_color = Color(0.92549, 0, 0.00784314, 0.14902)
 
-[node name="ActivateButton" type="Button" parent="."]
+[node name="ActivateButton" type="Button" parent="." unique_id=736909969]
 visibility_layer = 0
 offset_left = -32.0
 offset_top = -32.0
@@ -42,7 +42,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 mouse_default_cursor_shape = 2
 
-[node name="BackButton" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="." unique_id=3844465]
 visible = false
 z_index = 20
 offset_left = -38.0
@@ -52,21 +52,21 @@ offset_bottom = 37.0
 icon = ExtResource("4_bsbib")
 flat = true
 
-[node name="UpgradeButton" type="Button" parent="."]
+[node name="UpgradeButton" type="Button" parent="." unique_id=1520801192]
 visible = false
 offset_left = 341.0
 offset_top = -276.0
 offset_right = 349.0
 offset_bottom = -268.0
 
-[node name="UpgradeButton2" type="Button" parent="."]
+[node name="UpgradeButton2" type="Button" parent="." unique_id=1245744120]
 visible = false
 offset_left = -278.0
 offset_top = -296.0
 offset_right = -166.0
 offset_bottom = -288.0
 
-[node name="SellButton" type="Button" parent="."]
+[node name="SellButton" type="Button" parent="." unique_id=2098356335]
 visible = false
 offset_top = -180.0
 offset_right = 8.0

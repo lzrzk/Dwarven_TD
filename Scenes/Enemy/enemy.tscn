@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg8pjsf8mmsl3"]
+[gd_scene format=3 uid="uid://bg8pjsf8mmsl3"]
 
-[ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_nggcq"]
+[ext_resource type="Script" uid="uid://b8ky4d6oi4ow0" path="res://Scenes/Enemy/enemy.gd" id="1_nggcq"]
 [ext_resource type="Texture2D" uid="uid://c1he6q7mfky47" path="res://Assets/Assets_Enemies/Крыса.png" id="2_hhp0v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_foxfb"]
@@ -13,20 +13,20 @@ bg_color = Color(0.263729, 0.023624, 2.40654e-08, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_majs0"]
 bg_color = Color(0, 0.726047, 0.178912, 1)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" unique_id=1721525762]
 input_pickable = true
 script = ExtResource("1_nggcq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=938284653]
 z_index = 2
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_hhp0v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1666167689]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_foxfb")
 
-[node name="hp" type="ProgressBar" parent="."]
+[node name="hp" type="ProgressBar" parent="." unique_id=1368012016]
 offset_left = -9.0
 offset_top = 7.0
 offset_right = 9.0
@@ -35,14 +35,14 @@ theme_override_styles/background = SubResource("StyleBoxFlat_00ed5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_majs0")
 show_percentage = false
 
-[node name="InfoButton" type="Button" parent="."]
+[node name="InfoButton" type="Button" parent="." unique_id=1925669230]
 offset_left = -10.0
 offset_top = -7.0
 offset_right = 11.0
 offset_bottom = 8.0
 flat = true
 
-[node name="FireFrostTimer" type="Timer" parent="."]
+[node name="FireFrostTimer" type="Timer" parent="." unique_id=473068067]
 wait_time = 0.3
 autostart = true
 

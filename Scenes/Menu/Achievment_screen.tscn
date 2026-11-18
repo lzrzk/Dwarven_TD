@@ -1,23 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://d26hnc6uo3c7e"]
+[gd_scene format=3 uid="uid://d26hnc6uo3c7e"]
 
-[ext_resource type="Script" path="res://Scenes/Menu/save_manager.gd" id="1_qh4oq"]
+[ext_resource type="Script" uid="uid://dncoo2xqur0uc" path="res://Scenes/Menu/save_manager.gd" id="1_qh4oq"]
 [ext_resource type="Texture2D" uid="uid://c1he6q7mfky47" path="res://Assets/Assets_Enemies/Крыса.png" id="2_hutw3"]
 
-[node name="AchievmentScreen" type="Node2D"]
+[node name="AchievmentScreen" type="Node2D" unique_id=85357031]
 script = ExtResource("1_qh4oq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1916127656]
 offset_left = -46.0
 offset_top = -38.0
 offset_right = 1209.0
 offset_bottom = 735.0
 color = Color(0.26, 0.244833, 0.234, 1)
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=2094921000]
 offset_right = 8.0
 offset_bottom = 8.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=832156704]
 position = Vector2(81, 84)
 texture = ExtResource("2_hutw3")
 

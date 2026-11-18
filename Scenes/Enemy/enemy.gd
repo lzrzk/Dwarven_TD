@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 class_name enemy
-
+#region base stats
 @export var hp:float
 @export var maxHp:float
 @onready var type = "enemy"
@@ -15,16 +15,26 @@ class_name enemy
 @export var path:Path2D
 @export var pathFollow:PathFollow2D
 @export var oreGiven:int
+#endregion
+
 @export var speed_decreased = false
 @export var permafrost = false
 
+
+
 func _ready() -> void:
-	fire_trough_ice == 0
+	fire_trough_ice = 0
 	if not self.pathFollow:
 		self.pathFollow=PathFollow2D.new()
 	Variables.enemyPath.add_child(self.pathFollow)
+	var y_offset = randfn(0, 4)
 	
-
+	$Sprite2D.scale *= randfn(1, 0.1)
+	
+	$Sprite2D.position.y += y_offset
+	$CollisionShape2D.position.y += y_offset
+	$hp.position.y += y_offset
+	$InfoButton.position.y += y_offset
 
 func _process(delta: float) -> void:
 	self.pathFollow.progress += self.speed * delta
@@ -34,7 +44,7 @@ func _process(delta: float) -> void:
 	$hp.value = float(hp)/float(maxHp) *100
 	
 	
-	if self.pathFollow.get_progress_ratio() >= 0.98:
+	if self.pathFollow.get_progress_ratio() >= 0.96:
 		
 		Variables.lives -= self.damage
 		self.queue_free()
@@ -44,16 +54,17 @@ func _process(delta: float) -> void:
 
 
 func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg,) -> void:
-	print(fire_trough_ice)
 	
 	var magDmgTrue = magical_dmg * shieldsMagical
 	var physDmgTrue = physical_dmg * shieldsPhysical
 	var incomingDmg = physDmgTrue + magDmgTrue + true_dmg
+	
 	self.fire_trough_ice +=  fire_trough_ice
+	
 	self.hp -= incomingDmg
 	if self.hp <= 0:
 		if self.canSpawnOnDeath:
-			print("eevee")
+			
 			var spawnedOnDeathUnpacked = self.spawnedOnDeath.instantiate() as enemy
 			spawnedOnDeathUnpacked.fire_trough_ice = 0
 			spawnedOnDeathUnpacked.pathFollow=PathFollow2D.new()
@@ -72,19 +83,26 @@ func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg,) -> void:
 func _on_info_button_pressed() -> void:
 	Variables.selectedNode = self
 
-
-func _on_fire_frost_timer_timeout() -> void:
+# ???? figure out ?????
+# observation 1: only late game crystals deal this efect -> game design issue
+# observation 2: ice/fire forces player to chose only 1 efect -> game design issue
+# observation 3: certain enemesie ei. golems should have immunity to these effects -> game design issue
+# note 1: should acctualy figure out how ts works and not think about game desgin -> user error
+func _on_fire_frost_timer_timeout() -> void:	
 	if self.speed_decreased:
 		self.speed *= 2
 	if self.fire_trough_ice == 0:
 		$Sprite2D.modulate = Color("#ffffff")
 		pass
+	
 	elif self.fire_trough_ice > 0:
 		$Sprite2D.modulate = Color("#ff8080")
 		self.hp -= self.fire_trough_ice
 		self.fire_trough_ice -= 1
+	
 	elif self.fire_trough_ice < 0:
 		$Sprite2D.modulate = Color("#5784ff")
+		
 		if self.fire_trough_ice < 20 and permafrost:
 			$Sprite2D.modulate = Color("#0e19e8")
 			self.speed *= 0.9
