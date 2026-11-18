@@ -20,8 +20,6 @@ class_name enemy
 @export var speed_decreased = false
 @export var permafrost = false
 
-
-
 func _ready() -> void:
 	fire_trough_ice = 0
 	if not self.pathFollow:
@@ -43,17 +41,12 @@ func _process(delta: float) -> void:
 	$Sprite2D.flip_v = self.rotation > 0
 	$hp.value = float(hp)/float(maxHp) *100
 	
-	
 	if self.pathFollow.get_progress_ratio() >= 0.96:
 		
 		Variables.lives -= self.damage
 		self.queue_free()
 
-
-
-
-
-func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg,) -> void:
+func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg) -> void:
 	
 	var magDmgTrue = magical_dmg * shieldsMagical
 	var physDmgTrue = physical_dmg * shieldsPhysical
@@ -73,12 +66,8 @@ func hit(magical_dmg, physical_dmg,fire_trough_ice, true_dmg,) -> void:
 			
 			Variables.enemies.add_child(spawnedOnDeathUnpacked)
 			
-			
 		Variables.ore += oreGiven
 		self.queue_free()
-
-
-
 
 func _on_info_button_pressed() -> void:
 	Variables.selectedNode = self
@@ -88,7 +77,7 @@ func _on_info_button_pressed() -> void:
 # observation 2: ice/fire forces player to chose only 1 efect -> game design issue
 # observation 3: certain enemesie ei. golems should have immunity to these effects -> game design issue
 # note 1: should acctualy figure out how ts works and not think about game desgin -> user error
-func _on_fire_frost_timer_timeout() -> void:	
+func _on_fire_frost_timer_timeout() -> void:
 	if self.speed_decreased:
 		self.speed *= 2
 	if self.fire_trough_ice == 0:

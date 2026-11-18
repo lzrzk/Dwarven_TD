@@ -19,10 +19,10 @@ var rat_hound_armoured_mounted_scene = load("res://Scenes/Enemy/rat_hound_armour
 #endregion
 
 signal endwave
+
 var enemy_types = [rat_scene,rat_light_scene,rat_knight_scene,rat_king_scene,stone_golemite_scene,stone_golem_scene,crystal_golemite_scene,crystal_golem_scene,dark_spawn_scene,dark_abomination_scene,dark_broodmother,rat_hound_scene,rat_hound_armoured_scene,rat_hound_mounted_scene,rat_hound_armoured_mounted_scene]
 
 @export var waves:LevelWaves
-
 
 func _ready() -> void:
 	
@@ -69,9 +69,6 @@ func _ready() -> void:
 	waves[21]= [[10,10]]
 	'''
 #endregion
-func _process(delta: float) -> void:
-	pass
-
 	
 func startWave():
 	if waves.is_next_wave_possible():
@@ -79,7 +76,6 @@ func startWave():
 		waves.get_current_wave().next_enemy()
 		var wait_time = waves.get_current_wave().get_current_enemy_waittime()
 		$EnemyTimer.start(wait_time)
-
 
 func _on_enemy_timer_timeout() -> void:
 	waves.get_current_wave().next_enemy()

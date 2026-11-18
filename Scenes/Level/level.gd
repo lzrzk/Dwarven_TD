@@ -19,8 +19,8 @@ func _process(delta: float) -> void:
 	#region Game Over
 	if Variables.lives <= 0:
 		get_tree().change_scene_to_file("res://Scenes/Level/defeat_screen.tscn")
-	
 	#endregion
+	
 	#region End Wave
 	if len($enemies.get_children()) == 0 and endwave:
 		# Victory
